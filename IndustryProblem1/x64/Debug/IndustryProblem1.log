@@ -1,0 +1,4 @@
+﻿  정수열.cpp
+C:\Users\yeosu\source\repos\IndustryProblem1\정수열.cpp(36,13): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeosu\source\repos\IndustryProblem1\정수열.cpp(1575,8): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+  IndustryProblem1.vcxproj -> C:\Users\yeosu\source\repos\IndustryProblem1\x64\Debug\IndustryProblem1.exe
