@@ -1,3 +1,5 @@
 ﻿  main.c
-C:\Users\yeosu\source\repos\DataStructurePractice6\main.c(22,6): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+C:\Users\yeosu\source\repos\DataStructurePractice6\main.c(32,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+C:\Users\yeosu\source\repos\DataStructurePractice6\main.c(188): warning C4716: 'pop': 값을 반환해야 합니다.
+C:\Users\yeosu\source\repos\DataStructurePractice6\main.c(198): warning C4716: 'delete_q': 값을 반환해야 합니다.
   DataStructurePractice6.vcxproj -> C:\Users\yeosu\source\repos\DataStructurePractice6\x64\Debug\DataStructurePractice6.exe
