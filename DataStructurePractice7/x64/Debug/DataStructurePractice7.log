@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\yeosu\source\repos\DataStructurePractice7\main.c(184,8): warning C4101: 'temp' :참조되지 않은 지역 변수입니다.
+  DataStructurePractice7.vcxproj -> C:\Users\yeosu\source\repos\DataStructurePractice7\x64\Debug\DataStructurePractice7.exe
