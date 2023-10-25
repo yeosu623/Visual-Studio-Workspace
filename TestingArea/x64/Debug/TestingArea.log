@@ -1,5 +1,2 @@
 ﻿  main.c
-C:\Users\yeosu\source\repos\TestingArea\main.c(160,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'double'입니다.
-C:\Users\yeosu\source\repos\TestingArea\main.c(83): warning C4716: 'SingleMult': 값을 반환해야 합니다.
-C:\Users\yeosu\source\repos\TestingArea\main.c(113): warning C4716: 'Mult': 값을 반환해야 합니다.
   TestingArea.vcxproj -> C:\Users\yeosu\source\repos\TestingArea\x64\Debug\TestingArea.exe
