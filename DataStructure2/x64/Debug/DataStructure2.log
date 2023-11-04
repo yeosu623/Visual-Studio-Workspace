@@ -1,0 +1,4 @@
+﻿  21911981_정수열.cpp
+C:\Users\yeosu\source\repos\DataStructure2\21911981_정수열.cpp(22,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\yeosu\source\repos\DataStructure2\21911981_정수열.cpp(58,6): warning C4101: 'data' :참조되지 않은 지역 변수입니다.
+  DataStructure2.vcxproj -> C:\Users\yeosu\source\repos\DataStructure2\x64\Debug\DataStructure2.exe

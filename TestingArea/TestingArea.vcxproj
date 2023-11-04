@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="21911981_정수열.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
