@@ -85,7 +85,7 @@ struct node* create_node(int data) {
 }
 
 void insert_front(struct node** list, struct node* node) {
-	struct temp* existed_list = *list; // 기존의 linked list를 다른 곳에 저장
+	struct node* existed_list = *list; // 기존의 linked list를 다른 곳에 저장
 
 	*list = node; // linked list 시작 부분에 새로운 node를 연결
 	node->next = existed_list; // 새로운 node 뒤에는 기존의 linked list를 연결
