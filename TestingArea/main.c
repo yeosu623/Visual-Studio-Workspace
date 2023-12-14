@@ -1,35 +1,70 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define TRUE 1
+#define FALSE 0
+#define RANDOM 0
+#define ASCENDING 1
+#define DESCENDING 2
+#define SWAP(x, y, t) ((t) = (x), (x) = (y), (y) = (t))
 #include <stdio.h>
 #include <stdlib.h>
-int duplicateRemove(int*, int*);
+#include <time.h>
+
+void insert_data(float* arr, int n, int tag);
+int is_sorted(float* arr, int n);
+void quick_sort(float* arr, int left, int right);
 
 int main() {
-	int answer[10] = { 0,0,0,0,0,0,0,0,0,0 };
-	int question[10] = { 6,7,8,6,4,5,8,9,3,1 };
-	int count = duplicateRemove(question, answer);
+	int count = 0;
+	int n = 10000;
+	while (1) {
+		float* arr = (float*)malloc(sizeof(float) * n);
 
-	for (int i = 0; i < 10; i++) {
-		printf("%d ", answer[i]);
+		insert_data(arr, n, ASCENDING);
+		quick_sort(arr, 0, n - 1);
+
+		if (is_sorted(arr, n)) printf("quick sorted %d\n", count++);
+		else exit(1);
+
+		free(arr);
 	}
-	printf("\n");
-	printf("count = %d", count);
 }
 
-int duplicateRemove(int* question, int* answer) {
-	int count = 0;
-	int value;
-	int flag = 0;
+void insert_data(float* arr, int n, int tag) {
+	int i;
+	for (i = 0; i < n; i++)
+		arr[i] = (rand() / (0x7fff * 1.0)) * 100000000;
 
-	for (int i = 0; i < 10; i++) {
-		value = question[i];
+	quick_sort(arr, 0, n - 1);
+}
 
-		for (int j = 0; j < 10; j++) {
-			if (value == answer[j]) flag = 1;
-		}
-		if (flag == 1);
-		else if (flag == 0) answer[count++] = value;
-
-		flag = 0;
+int is_sorted(float* arr, int n) {
+	int i;
+	for (i = 0; i < n - 1; i++) {
+		if (!(arr[i] <= arr[i + 1]))
+			return FALSE;
 	}
+	return TRUE;
+}
+ 
+// ÃâÃ³ : https://code-lab1.tistory.com/23
+void quick_sort(float* arr, int L, int R) {
+	int left = L, right = R;
+	float pivot = arr[(L + R) / 2];
+	float temp;
 
-	return count;
-} 
+	do {
+		while (arr[left] < pivot) left++;
+		while (arr[right] > pivot) right--;
+		if (left <= right) {
+			temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
+
+			left++;
+			right--;
+		} 
+	} while (left <= right);
+
+	if (L < right) quick_sort(arr, L, right);
+	if (left < R) quick_sort(arr, left, R);
+}

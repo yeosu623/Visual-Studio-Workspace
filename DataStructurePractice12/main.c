@@ -21,7 +21,7 @@ int main() {
 	print_12(RANDOM);
 
 	printf("12.2. 정렬된 데이터의 정렬\n");
-	printf("12.2.1. 오름차순 정렬된 데이터의 정렬");
+	printf("12.2.1. 오름차순 정렬된 데이터의 정렬\n");
 	print_12(ASCENDING);
 
 	printf("12.2.2. 내림차순 정렬된 데이터의 정렬\n");
@@ -84,39 +84,27 @@ void insertion_sort(float* arr, int n) {
 	}
 }
 
-void quick_sort(float* arr, int left, int right) {
-	// arr[left], ..., arr[right]까지 오름차순으로 정렬.
-	// arr[left] 를 "기준 값(pivot key)"으로 선정
-	// arr[left] <= arr[right + 1] 라고 가정
-
-	int i, j;
-	float pivot;
+// 출처 : https://code-lab1.tistory.com/23
+void quick_sort(float* arr, int L, int R) {
+	int left = L, right = R;
+	float pivot = arr[(L + R) / 2];
 	float temp;
 
-	if (left < right) {
-		i = left;
-		j = right + 1;
-		pivot = arr[left];
+	do {
+		while (arr[left] < pivot) left++;
+		while (arr[right] > pivot) right--;
+		if (left <= right) {
+			temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
 
-		do {
-			// pivot을 중심으로 왼쪽과 오른쪽 리스트 생성
-			// 왼쪽 리스트 : pivot보다 적은 키들을 저장, 오른쪽은 반대
-			do
-				i++;
-			while (arr[i] < pivot);
-			do
-				j--;
-			while (arr[j] > pivot);
+			left++;
+			right--;
+		}
+	} while (left <= right);
 
-			if (i < j)
-				SWAP(arr[i], arr[j], temp);
-
-		} while (i < j);
-
-		SWAP(arr[left], arr[j], temp);
-		quick_sort(arr, left, j - 1);
-		quick_sort(arr, j + 1, right);
-	}
+	if (L < right) quick_sort(arr, L, right);
+	if (left < R) quick_sort(arr, left, R);
 }
 
 void print_12(int tag) {
