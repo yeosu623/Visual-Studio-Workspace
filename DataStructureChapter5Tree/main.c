@@ -248,3 +248,52 @@ element delete_max_heap(int* n) {
 	heap[parent] = temp;
 	return item;
 }
+
+struct node* search(struct node* root, int key) {
+	// recursive version
+	if (!root) return NULL;
+	if (key == root->data) return root;
+	if (key < root->data) return search(root->lchild, key);
+	return search(root->rchild, key);
+}
+
+struct node* iterSearch(struct node* tree, int key) {
+	// iterative version
+	while (tree != NULL) {
+		if (key == tree->data) return tree;
+		if (key < tree->data) tree = tree->lchild;
+		else tree = tree->rchild;
+	}
+	return NULL;
+}
+
+void insert_node(struct node** root, int num) {
+	struct node* ptr, *parent = modified_search(*root, num);
+
+	if (parent || !(*root)) { // num이 tree에 존재하지 않는다.
+		ptr = (struct node*)malloc(sizeof(struct node));
+		ptr->data = num;
+		ptr->lchild = ptr->rchild = NULL;
+
+		if (*root) {
+			if (num < parent->data) parent->lchild = ptr;
+			else parent->rchild = ptr;
+		}
+		else *root = ptr;
+	}
+}
+
+struct node* modified_search(struct node* root, int key) {
+	for (struct node* ptr = root; ptr != NULL;) {
+		if (ptr->data == key) return NULL;
+		if (key < ptr->data) {
+			if (ptr->lchild == NULL) return ptr;
+			else ptr = ptr->lchild;
+		}
+		else {
+			if (ptr->rchild == NULL) return ptr;
+			else ptr = ptr->rchild;
+		}
+	}
+	return NULL;
+}
