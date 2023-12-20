@@ -45,6 +45,9 @@ void quicksort(int list[], int left, int right) {
 
 // 정렬된 두개의 리스트를 합병
 void merge(int list[], int sorted[], int i, int m, int n) {
+	// list[i], ..., list[m]과 list[m+1], ..., list[n]은 각각 정렬된 리스트
+	// 두 개의 리스트를 병합하여 정렬된 sorted[i], .., sorted[n]을 생성
+
 	int j = m + 1; // i : 첫 번째 리스트 색인, j = 두 번쨰 리스트 색인
 	int k = i; // k : sorted[]의 색인
 

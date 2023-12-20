@@ -43,6 +43,7 @@ void bfs(int v) {
 
 	while (front) {
 		v = deleteq();
+
 		for(w = graph[v]; w; w = w->link)
 			if (!visited[w->vertex]) {
 				visited[w->vertex] = TRUE;
@@ -65,6 +66,7 @@ void connected() {
 // Prim Algorithm 원리, 시간복잡도
 // Sollin Algorithm 원리, 시간복잡도
 // Dijkstra Algorithm 원리, 시간복잡도
+int v;
 int cost[][MAX_VERTICES];
 int distance[MAX_VERTICES];
 int n = MAX_VERTICES;

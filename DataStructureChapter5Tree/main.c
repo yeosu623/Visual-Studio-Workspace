@@ -1,5 +1,6 @@
 #define TRUE 1
 #define FALSE 0
+#define MAX_HEAP 1000
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,7 +23,7 @@ typedef struct {
 	int key;
 	int value;
 } element;
-element heap[1000];
+element heap[MAX_HEAP];
 int n = 0;
 
 void inorder(struct node* ptr) {
@@ -49,19 +50,19 @@ void postorder(struct node* ptr) {
 	}
 }
 
-void iter_inorder(struct node* node) {
+void iter_inorder(struct node* ptr) {
 	int top = -1;
 	struct node* stack[1000];
 
 	for (;;) {
-		for (; node; node = node->lchild)
-			push(node); // 왼쪽 끝으로
+		for (; ptr; ptr = ptr->lchild)
+			push(ptr); // 왼쪽 끝으로
 
-		node = pop();
-		if (!node) break;
+		ptr = pop();
+		if (!ptr) break;
 
-		printf("%d", node->data);
-		node = node->rchild;
+		printf("%d", ptr->data);
+		ptr = ptr->rchild;
 	}
 }
 
@@ -70,12 +71,12 @@ void level_order(struct node* ptr) {
 	struct node* queue[1000];
 
 	if (!ptr) return; // empty tree
-	addq(ptr);
 
+	addq(ptr);
 	for (;;) {
 		ptr = deleteq();
-		if (ptr == NULL) break;
 
+		if (ptr == NULL) break;
 		printf("%d", ptr->data);
 
 		if (ptr->lchild)
@@ -85,7 +86,7 @@ void level_order(struct node* ptr) {
 	}
 }
 
-tree_pointer copy(struct node* original) {
+struct node* copy(struct node* original) {
 	struct node* temp;
 
 	if (original) {
@@ -125,7 +126,6 @@ int get_depth_count(struct node* ptr) {
 
 int get_leaf_count(struct node* ptr) {
 	int count = 0;
-
 	if (ptr != NULL) {
 		if (ptr->lchild == NULL && ptr->rchild == NULL) // 단말 노드
 			return 1;
@@ -147,7 +147,6 @@ struct thread_node* insucc(struct thread_node* ptr) {
 }
 
 struct thread_node* inpred(struct thread_node* ptr) {
-	// Threaded bianry tree에서 ptr이 가리키는 노드의 inorder predecessor를 리턴
 	struct thread_node* temp = ptr->lchild;
 
 	if (!ptr->lthread)
@@ -155,17 +154,6 @@ struct thread_node* inpred(struct thread_node* ptr) {
 			temp = temp->rchild;
 
 	return temp;
-}
-
-void tinorder(struct thread_node* node) {
-	struct thread_node* temp = node;
-
-	for (;;) {
-		temp = insucc(temp);
-		if (temp == node) break;
-
-		printf("%d", temp->data);
-	}
 }
 
 void insert_right(struct thread_node* parent, struct thread_node* child) {
@@ -203,11 +191,21 @@ void insert_left(struct thread_node* parent, struct thread_node* child) {
 	}
 }
 
+void thread_inorder(struct thread_node* ptr) {
+	struct thread_node* temp = ptr;
+
+	for (;;) {
+		temp = insucc(temp);
+		if (temp == ptr) break;
+
+		printf("%d", temp->data);
+	}
+}
 
 void insert_max_heap(element item, int* n) {
 	// 노드 수가 *n인 max_heap에 item 값을 추가
 	int i;
-	if (*n == 1000 - 1) { // HEAP_FULL
+	if (*n == MAX_HEAP - 1) { // HEAP_FULL
 		fprintf(stderr, "The heap is full.\n");
 		exit(1);
 	}
@@ -215,7 +213,7 @@ void insert_max_heap(element item, int* n) {
 	i = ++(*n);
 	while ((i != 1) && (item.key > heap[i / 2].key)) {
 		heap[i] = heap[i / 2];
-		i /= 2;
+		i = i / 2;
 	}
 	heap[i] = item;
 }
