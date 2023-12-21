@@ -48,7 +48,7 @@ void bfs(int v) {
 			if (!visited[w->vertex]) {
 				visited[w->vertex] = TRUE;
 				printf("%3d", w->vertex);
-				addq(v);
+				addq(w->vertex);
 			}
 	}
 }
@@ -94,8 +94,6 @@ void shortestpath(int v, int cost[][MAX_VERTICES], int distance[], int n, short 
 }
 
 int choose(int distance[], int n, short int found[]) {
-	// 아직 S에 포함되지 않은 vertex 중에서 최소 거리를 갖는 vertex를 return
-
 	int i, min, minpos;
 
 	min = INT_MAX;

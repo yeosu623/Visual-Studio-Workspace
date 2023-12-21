@@ -69,11 +69,20 @@ void merge(int list[], int sorted[], int i, int m, int n) {
 
 void merge_pass(int list[], int sorted[], int n, int length) {
 	int i, j;
-	for (i = 0; i + 2 * length - 1 < n; i += 2 * length)
-		merge(list, sorted, i, i + length - 1, i + 2 * length - 1);
+
+	for (i = 0; 
+		i + 2 * length - 1 < n; 
+		i += 2 * length)
+		merge(list, sorted,
+			i,
+			i + length - 1,
+			i + 2 * length - 1);
 
 	if (i + length < n)
-		merge(list, sorted, i, i + length - 1, n - 1);
+		merge(list, sorted,
+			i,
+			i + length - 1, 
+			n - 1);
 	else
 		for (j = i; j < n; j++)
 			sorted[j] = list[j];
@@ -99,7 +108,8 @@ void adjust(int list[], int root, int n) {
 	while (child <= n) {
 		if ((child < n) && (list[child] < list[child + 1]))
 			child++;
-		if (rootkey > list[child]) break;
+		if (list[child] < rootkey)
+			break;
 		else {
 			list[child / 2] = list[child];
 			child *= 2;

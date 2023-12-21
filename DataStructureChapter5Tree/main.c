@@ -235,7 +235,7 @@ element delete_max_heap(int* n) {
 	while (child <= *n) {
 		if ((child < *n) && (heap[child].key < heap[child + 1].key))
 			child++;
-		if (temp.key >= heap[child].key)
+		if (heap[child].key <= temp.key)
 			break;
 
 		heap[parent] = heap[child];
@@ -282,8 +282,11 @@ void insert_node(struct node** root, int num) {
 }
 
 struct node* modified_search(struct node* root, int key) {
-	for (struct node* ptr = root; ptr != NULL;) {
-		if (ptr->data == key) return NULL;
+	struct node* ptr;
+
+	for (ptr = root; ptr != NULL;) {
+
+		if (key == ptr->data) return NULL;
 		if (key < ptr->data) {
 			if (ptr->lchild == NULL) return ptr;
 			else ptr = ptr->lchild;
