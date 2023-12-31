@@ -27,6 +27,7 @@
     <ClCompile Include="1_3_defaultValue.cpp" />
     <ClCompile Include="1_4_inlineFunction.cpp" />
     <ClCompile Include="1_5_globalVariable.cpp" />
+    <ClCompile Include="1_5_heap_test.cpp" />
     <ClCompile Include="1_5_namespace.cpp" />
     <ClCompile Include="1_5_namespace2.cpp" />
     <ClCompile Include="1_5_namespaceStd.cpp" />
@@ -40,10 +41,19 @@
     <ClCompile Include="2_6_cppheader.cpp" />
     <ClCompile Include="3_2_class.cpp" />
     <ClCompile Include="4_3_Constructor.cpp" />
+    <ClCompile Include="4_3_destructor.cpp" />
+    <ClCompile Include="4_3_destructor2.cpp" />
     <ClCompile Include="4_3_initializer.cpp" />
     <ClCompile Include="4_3_initializer2.cpp" />
     <ClCompile Include="4_3_objectDefaultConstructorTest.cpp" />
     <ClCompile Include="4_3_privateConstructor.cpp" />
+    <ClCompile Include="4_4_selfReference.cpp" />
+    <ClCompile Include="5_1_copyConstructor.cpp" />
+    <ClCompile Include="5_1_explicit.cpp" />
+    <ClCompile Include="5_2_deepCopy.cpp" />
+    <ClCompile Include="5_3_copyConstructor1.cpp" />
+    <ClCompile Include="5_3_copyConstructor2.cpp" />
+    <ClCompile Include="6_2_friend1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
