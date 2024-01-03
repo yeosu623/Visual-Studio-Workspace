@@ -57,6 +57,10 @@
     <ClCompile Include="6_3_static.cpp" />
     <ClCompile Include="7_1_scenario.cpp" />
     <ClCompile Include="7_2_inherit.cpp" />
+    <ClCompile Include="8_1_orangeMediaVer1.cpp" />
+    <ClCompile Include="8_2_orangeMediaVer2.cpp" />
+    <ClCompile Include="8_2_virtual.cpp" />
+    <ClCompile Include="8_3_referenceWithInterit.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
