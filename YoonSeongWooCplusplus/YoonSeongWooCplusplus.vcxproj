@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="10_1_operatorPlus.cpp" />
+    <ClCompile Include="10_1_operatorPlus2.cpp" />
+    <ClCompile Include="10_2_operator.cpp" />
     <ClCompile Include="1_1_cin.cpp" />
     <ClCompile Include="1_1_cout.cpp" />
     <ClCompile Include="1_1_localVal.cpp" />
@@ -61,6 +64,7 @@
     <ClCompile Include="8_2_orangeMediaVer2.cpp" />
     <ClCompile Include="8_2_virtual.cpp" />
     <ClCompile Include="8_3_referenceWithInterit.cpp" />
+    <ClCompile Include="9_2_multipleInherit.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

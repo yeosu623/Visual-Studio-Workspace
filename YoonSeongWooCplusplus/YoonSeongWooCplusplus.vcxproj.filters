@@ -141,5 +141,17 @@
     <ClCompile Include="8_3_referenceWithInterit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="9_2_multipleInherit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10_1_operatorPlus.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10_1_operatorPlus2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10_2_operator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
