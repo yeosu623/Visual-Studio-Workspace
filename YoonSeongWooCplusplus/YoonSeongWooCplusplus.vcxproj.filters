@@ -153,5 +153,8 @@
     <ClCompile Include="10_2_operator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="10_3_exchangeRule.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
