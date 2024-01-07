@@ -1,0 +1,70 @@
+﻿  10_1_operatorPlus.cpp
+  10_1_operatorPlus2.cpp
+  10_2_operator.cpp
+  10_3_exchangeRule.cpp
+  10_4_ostream.cpp
+  13_1_template2.cpp
+  13_1_templateForFunction.cpp
+  13_1_templateSpecialization.cpp
+  13_2_classTemplate.cpp
+  13_2_classTemplateExternal.cpp
+  14_2_classTemplateSpecialization.cpp
+  15_2_tryCatch.cpp
+  15_3_stackUnwinding.cpp
+C:\Users\yeosu\source\repos\YoonSeongWooCplusplus\15_3_stackUnwinding.cpp(7,3): warning C4297: 'Divide': 함수는 예외를 Throw하지 않도록 지정되었으나 예외를 Throw했습니다.
+  C:\Users\yeosu\source\repos\YoonSeongWooCplusplus\15_3_stackUnwinding.cpp(7,3):
+  함수에서 __declspec(nothrow), throw(), noexcept(true) 또는 noexcept를 지정했습니다.
+  
+C:\Users\yeosu\source\repos\YoonSeongWooCplusplus\15_3_stackUnwinding.cpp(22,13): warning C4101: 'expn' :참조되지 않은 지역 변수입니다.
+  15_3_stackUnwinding2.cpp
+  15_3_stackUnwinding3.cpp
+  1_1_cin.cpp
+  1_1_cout.cpp
+  1_1_localVal.cpp
+  1_1_printString.cpp
+  1_2_functionOverroading.cpp
+  컴파일하고 있습니다...
+  1_3_defaultValue.cpp
+  1_4_inlineFunction.cpp
+  1_5_globalVariable.cpp
+  1_5_heap_test.cpp
+  1_5_namespace.cpp
+  1_5_namespace2.cpp
+  1_5_namespaceStd.cpp
+  2_2_bool.cpp
+  2_3_reference.cpp
+  2_3_referenceForPointer.cpp
+  2_4_referenceAndFunction.cpp
+  2_4_referenceReturn.cpp
+  2_4_referenceReturn2.cpp
+  2_5_newAndDelete.cpp
+  2_6_cppheader.cpp
+  3_2_class.cpp
+  4_3_Constructor.cpp
+  4_3_destructor.cpp
+  4_3_destructor2.cpp
+  4_3_initializer.cpp
+  컴파일하고 있습니다...
+  4_3_initializer2.cpp
+  4_3_objectDefaultConstructorTest.cpp
+  4_3_privateConstructor.cpp
+  4_4_selfReference.cpp
+  5_1_copyConstructor.cpp
+  5_1_explicit.cpp
+  5_2_deepCopy.cpp
+  5_3_copyConstructor1.cpp
+  5_3_copyConstructor2.cpp
+  6_2_friend1.cpp
+  6_3_static.cpp
+  7_1_scenario.cpp
+  7_2_inherit.cpp
+  8_1_orangeMediaVer1.cpp
+  8_2_orangeMediaVer2.cpp
+  8_2_virtual.cpp
+  8_3_referenceWithInterit.cpp
+  9_2_multipleInherit.cpp
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 12 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  YoonSeongWooCplusplus.vcxproj -> C:\Users\yeosu\source\repos\YoonSeongWooCplusplus\x64\Release\YoonSeongWooCplusplus.exe
