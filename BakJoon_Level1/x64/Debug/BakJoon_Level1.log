@@ -1,0 +1,11 @@
+﻿  1_Hello_World.cpp
+  2_AplusB.cpp
+  3_AminusB.cpp
+  4_AmultipleB.cpp
+  5_AdivideB.cpp
+  코드를 생성하고 있습니다...
+2_AplusB.obj : error LNK2005: main이(가) 1_Hello_World.obj에 이미 정의되어 있습니다.
+3_AminusB.obj : error LNK2005: main이(가) 1_Hello_World.obj에 이미 정의되어 있습니다.
+4_AmultipleB.obj : error LNK2005: main이(가) 1_Hello_World.obj에 이미 정의되어 있습니다.
+5_AdivideB.obj : error LNK2005: main이(가) 1_Hello_World.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level1\x64\Debug\BakJoon_Level1.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
