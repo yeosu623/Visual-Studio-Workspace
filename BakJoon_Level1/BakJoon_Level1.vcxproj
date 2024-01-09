@@ -130,6 +130,7 @@
     <ClCompile Include="10_multiply.cpp" />
     <ClCompile Include="11_triplePlus.cpp" />
     <ClCompile Include="12_cat.cpp" />
+    <ClCompile Include="13_dog.cpp" />
     <ClCompile Include="1_Hello_World.cpp" />
     <ClCompile Include="2_AplusB.cpp" />
     <ClCompile Include="3_AminusB.cpp" />
