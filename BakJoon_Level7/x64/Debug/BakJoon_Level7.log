@@ -1,0 +1,9 @@
+﻿  1_matrixAdd.cpp
+  2_max.cpp
+  3_readbyColumn.cpp
+  4_colorPapar.cpp
+  코드를 생성하고 있습니다...
+2_max.obj : error LNK2005: main이(가) 1_matrixAdd.obj에 이미 정의되어 있습니다.
+3_readbyColumn.obj : error LNK2005: main이(가) 1_matrixAdd.obj에 이미 정의되어 있습니다.
+4_colorPapar.obj : error LNK2005: main이(가) 1_matrixAdd.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level7\x64\Debug\BakJoon_Level7.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

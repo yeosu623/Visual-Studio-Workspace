@@ -7,9 +7,18 @@ int main()
 	ios::sync_with_stdio(false);
 
 	int a, b;
-	while (cin >> a >> b)
+	cin >> a >> b;
+
+	int c;
+	while (a != 0)
 	{
-		cout << a + b << '\n';
+		c = a % b;
+		a = a / b;
+
+		if (c < 10)
+			cout << c;
+		else
+			cout << (char)('A' - 10 + c);
 	}
 
 	return 0;
