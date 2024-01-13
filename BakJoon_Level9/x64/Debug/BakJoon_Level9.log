@@ -1,0 +1,5 @@
+﻿  1_factorAndmultiple.cpp
+  2_factor.cpp
+  코드를 생성하고 있습니다...
+2_factor.obj : error LNK2005: main이(가) 1_factorAndmultiple.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level9\x64\Debug\BakJoon_Level9.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

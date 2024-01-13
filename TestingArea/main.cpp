@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -6,20 +8,22 @@ int main()
 	cin.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int a, b;
-	cin >> a >> b;
+	vector<int> v;
 
-	int c;
-	while (a != 0)
-	{
-		c = a % b;
-		a = a / b;
+	v.push_back(10);
+	v.push_back(5);
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(1);
+	v.push_back(4);
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(5);
+	v.push_back(1);
+	v.push_back(7);
 
-		if (c < 10)
-			cout << c;
-		else
-			cout << (char)('A' - 10 + c);
-	}
-
-	return 0;
+	sort(v.begin(), v.end());
+	
+	for (const auto& n : v)
+		cout << n << ' ';
 }
