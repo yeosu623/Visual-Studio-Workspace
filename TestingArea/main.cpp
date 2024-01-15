@@ -1,29 +1,76 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
+#include <stack>
 using namespace std;
 
 int main()
 {
 	cin.tie(NULL);
+	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	vector<int> v;
+	char a;
+	string s;
+	stack<char> st;
+	while (true)
+	{
+		getline(cin, s);
+		if (s == ".") break;
 
-	v.push_back(10);
-	v.push_back(5);
-	v.push_back(2);
-	v.push_back(3);
-	v.push_back(1);
-	v.push_back(4);
-	v.push_back(2);
-	v.push_back(3);
-	v.push_back(5);
-	v.push_back(1);
-	v.push_back(7);
+		for (int i = 0; i < s.length(); i++)
+		{
+			a = s[i];
 
-	sort(v.begin(), v.end());
-	
-	for (const auto& n : v)
-		cout << n << ' ';
+			if (a == '(')
+			{
+				st.push(a);
+			}
+			if (a == ')')
+			{
+				if (st.empty()) st.push(a);
+				else
+				{
+					if (st.top() == '(')
+					{
+						st.push(a);
+						st.pop();
+						st.pop();
+					}
+					else
+					{
+						st.push(a);
+					}
+				}
+			}
+
+			if (a == '[')
+			{
+				st.push(a);
+			}
+			if (a == ']')
+			{
+				if (st.empty()) st.push(a);
+				else
+				{
+					if (st.top() == '[')
+					{
+						st.push(a);
+						st.pop();
+						st.pop();
+					}
+					else
+					{
+						st.push(a);
+					}
+				}
+			}
+		}
+
+		if (st.empty()) cout << "yes" << '\n';
+		else cout << "no" << '\n';
+
+		while (!st.empty()) st.pop();
+	}
+
+	return 0;
 }

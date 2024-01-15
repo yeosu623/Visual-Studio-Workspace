@@ -1,0 +1,4 @@
+﻿  1_stack.cpp
+C:\Users\yeosu\source\repos\BakJoon_Level16\1_stack.cpp(33,7): warning C4834: [[nodiscard]] 특성이 포함된 함수의 반환 값을 버리는 중입니다.
+C:\Users\yeosu\source\repos\BakJoon_Level16\1_stack.cpp(53,7): warning C4834: [[nodiscard]] 특성이 포함된 함수의 반환 값을 버리는 중입니다.
+  BakJoon_Level16.vcxproj -> C:\Users\yeosu\source\repos\BakJoon_Level16\x64\Debug\BakJoon_Level16.exe

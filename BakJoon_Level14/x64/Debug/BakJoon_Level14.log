@@ -1,0 +1,96 @@
+﻿  1.findCard.cpp
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(15,2): error C2143: 구문 오류: ';'이(가) '<template-id>' 앞에 없습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661: 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert': 오버로드된 함수에서 0개의 인수를 사용하지 않습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:         with
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:         [
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:             _Kty=int,
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:             _Pr=std::less<int>,
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:             _Alloc=std::allocator<int>
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6): error C2661:         ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xtree(1258,10):
+  'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(_Iter,_Iter)'일 수 있습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  	C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  	'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(_Iter,_Iter)': 2개의 인수가 필요합니다. 0개가 제공되었습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xtree(1227,14):
+  또는       'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(int &&)'
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  	C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  	'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(int &&)': 1개의 인수가 필요합니다. 0개가 제공되었습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xtree(1221,26):
+  또는       'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(int &&)'
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  	C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  	'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(int &&)': 1개의 인수가 필요합니다. 0개가 제공되었습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xtree(1216,14):
+  또는       'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(const int &)'
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  	C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  	'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(const int &)': 1개의 인수가 필요합니다. 0개가 제공되었습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xtree(1210,26):
+  또는       'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(const int &)'
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  	C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  	'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<int>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(const int &)': 1개의 인수가 필요합니다. 0개가 제공되었습니다.
+          with
+          [
+              _Kty=int,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(19,6):
+  인수 목록 '()'을(를) 일치시키는 동안
+  
+C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(22,6): error C2086: 'int b': 재정의
+  C:\Users\yeosu\source\repos\BakJoon_Level14\1.findCard.cpp(14,6):
+  'b' 선언을 참조하십시오.
+  
