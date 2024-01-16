@@ -1,4 +1,14 @@
-﻿  1_stack.cpp
-C:\Users\yeosu\source\repos\BakJoon_Level16\1_stack.cpp(33,7): warning C4834: [[nodiscard]] 특성이 포함된 함수의 반환 값을 버리는 중입니다.
-C:\Users\yeosu\source\repos\BakJoon_Level16\1_stack.cpp(53,7): warning C4834: [[nodiscard]] 특성이 포함된 함수의 반환 값을 버리는 중입니다.
-  BakJoon_Level16.vcxproj -> C:\Users\yeosu\source\repos\BakJoon_Level16\x64\Debug\BakJoon_Level16.exe
+﻿  10_poppingBalloon.cpp
+  8_yosefush.cpp
+  9_deque.cpp
+  코드를 생성하고 있습니다...
+1_stack.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+2_zeroThatOut.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+3_parenthesis.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+4_theBalanceOfTheWorld.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+5_giveMeal.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+6_queue.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+7_card.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+8_yosefush.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+9_deque.obj : error LNK2005: main이(가) 10_poppingBalloon.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level16\x64\Debug\BakJoon_Level16.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

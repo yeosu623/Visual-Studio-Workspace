@@ -1,7 +1,18 @@
 #include <iostream>
-#include <string>
-#include <stack>
+#include <vector>
 using namespace std;
+
+int gcd(int a, int b)
+{
+	int c;
+	while (b)
+	{
+		c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
 
 int main()
 {
@@ -9,68 +20,28 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	char a;
-	string s;
-	stack<char> st;
-	while (true)
+	int a;
+	cin >> a;
+
+	int b;
+	vector<int> v;
+	for (int i = 0; i < a; i++)
 	{
-		getline(cin, s);
-		if (s == ".") break;
-
-		for (int i = 0; i < s.length(); i++)
-		{
-			a = s[i];
-
-			if (a == '(')
-			{
-				st.push(a);
-			}
-			if (a == ')')
-			{
-				if (st.empty()) st.push(a);
-				else
-				{
-					if (st.top() == '(')
-					{
-						st.push(a);
-						st.pop();
-						st.pop();
-					}
-					else
-					{
-						st.push(a);
-					}
-				}
-			}
-
-			if (a == '[')
-			{
-				st.push(a);
-			}
-			if (a == ']')
-			{
-				if (st.empty()) st.push(a);
-				else
-				{
-					if (st.top() == '[')
-					{
-						st.push(a);
-						st.pop();
-						st.pop();
-					}
-					else
-					{
-						st.push(a);
-					}
-				}
-			}
-		}
-
-		if (st.empty()) cout << "yes" << '\n';
-		else cout << "no" << '\n';
-
-		while (!st.empty()) st.pop();
+		cin >> b;
+		v.push_back(b);
 	}
 
-	return 0;
+	vector<int> w;
+	for (int i = 0; i < v.size() - 1; i++)
+	{
+		w.push_back(v[i + 1] - v[i]);
+	}
+
+	int c = gcd(w[0], w[1]);
+	for (int i = 2; i < w.size(); i++)
+	{
+		c = gcd(c, w[i]);
+	}
+
+	cout << c;
 }

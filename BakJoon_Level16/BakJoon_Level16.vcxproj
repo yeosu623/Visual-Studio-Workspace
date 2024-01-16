@@ -127,11 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10_poppingBalloon.cpp" />
+    <ClCompile Include="11_queuestack.cpp" />
     <ClCompile Include="1_stack.cpp" />
     <ClCompile Include="2_zeroThatOut.cpp" />
     <ClCompile Include="3_parenthesis.cpp" />
     <ClCompile Include="4_theBalanceOfTheWorld.cpp" />
     <ClCompile Include="5_giveMeal.cpp" />
+    <ClCompile Include="6_queue.cpp" />
+    <ClCompile Include="7_card.cpp" />
+    <ClCompile Include="8_yosefush.cpp" />
+    <ClCompile Include="9_deque.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
