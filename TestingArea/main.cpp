@@ -2,16 +2,25 @@
 #include <vector>
 using namespace std;
 
-int gcd(int a, int b)
+vector<int> Eratos(int n)
 {
-	int c;
-	while (b)
+	vector<int> v;
+
+	if (n <= 1) return v;
+	v.resize(n + 1, 1);
+	v[0] = 0;
+	v[1] = 0;
+
+	for (int i = 2; i * i <= n; i++)
 	{
-		c = a % b;
-		a = b;
-		b = c;
+		if (v[i])
+		{
+			for (int j = i * i; j <= n; j += i)
+				v[j] = 0;
+		}
 	}
-	return a;
+
+	return v;
 }
 
 int main()
@@ -20,28 +29,9 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int a;
-	cin >> a;
-
-	int b;
-	vector<int> v;
-	for (int i = 0; i < a; i++)
+	vector<int> v = Eratos(100);
+	for (int i = 0; i <= 100; i++)
 	{
-		cin >> b;
-		v.push_back(b);
+		if (v[i]) cout << i << ' ';
 	}
-
-	vector<int> w;
-	for (int i = 0; i < v.size() - 1; i++)
-	{
-		w.push_back(v[i + 1] - v[i]);
-	}
-
-	int c = gcd(w[0], w[1]);
-	for (int i = 2; i < w.size(); i++)
-	{
-		c = gcd(c, w[i]);
-	}
-
-	cout << c;
 }
