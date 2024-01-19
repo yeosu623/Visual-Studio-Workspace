@@ -1,0 +1,11 @@
+﻿  1_VeraAndOutfits.cpp
+  2_greenTower.cpp
+  3_factorial.cpp
+  4_binomialCoefficient.cpp
+  5_placeBridge.cpp
+  코드를 생성하고 있습니다...
+2_greenTower.obj : error LNK2005: main이(가) 1_VeraAndOutfits.obj에 이미 정의되어 있습니다.
+3_factorial.obj : error LNK2005: main이(가) 1_VeraAndOutfits.obj에 이미 정의되어 있습니다.
+4_binomialCoefficient.obj : error LNK2005: main이(가) 1_VeraAndOutfits.obj에 이미 정의되어 있습니다.
+5_placeBridge.obj : error LNK2005: main이(가) 1_VeraAndOutfits.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level19\x64\Debug\BakJoon_Level19.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

@@ -1,0 +1,15 @@
+﻿  1_aliquot.cpp
+  2_bear.cpp
+C:\Users\yeosu\source\repos\BakJoon_Level20\2_bear.cpp(24,21): warning C4267: '+=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level20\2_bear.cpp(32,19): warning C4267: '+=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  3_rabbit.cpp
+  4_statistic.cpp
+C:\Users\yeosu\source\repos\BakJoon_Level20\4_statistic.cpp(29,10): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level20\4_statistic.cpp(33,10): warning C4244: '초기화 중': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  5_englishWords.cpp
+  코드를 생성하고 있습니다...
+2_bear.obj : error LNK2005: main이(가) 1_aliquot.obj에 이미 정의되어 있습니다.
+3_rabbit.obj : error LNK2005: main이(가) 1_aliquot.obj에 이미 정의되어 있습니다.
+4_statistic.obj : error LNK2005: main이(가) 1_aliquot.obj에 이미 정의되어 있습니다.
+5_englishWords.obj : error LNK2005: main이(가) 1_aliquot.obj에 이미 정의되어 있습니다.
+C:\Users\yeosu\source\repos\BakJoon_Level20\x64\Debug\BakJoon_Level20.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
