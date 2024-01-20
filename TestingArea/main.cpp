@@ -1,24 +1,22 @@
 #include <iostream>
+#include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-	cin.tie(NULL);
-	cout.tie(NULL);
-	ios::sync_with_stdio(false);
+	vector<pair<string, string>> v;
+	v.push_back({ "a", "aaa" });
+	v.push_back({ "b", "bbb" });
+	v.push_back({ "c", "ccc" });
 
-	int a;
-	cin >> a;
+	string s = "ccc";
 
-	vector<vector<char>> v(a, vector<char>(a, '*'));
+	int idx = find_if(v.begin(), v.end(),
+		[&s](const pair<string, string>& elem) {return elem.second == s;})
+		- v.begin();
 
-	for (int i = 0; i < a; i++)
-	{
-		for (int j = 0; j < a; j++)
-		{
-			cout << v[i][j];
-		}
-		cout << '\n';
-	}
+	cout << idx;
+
 }
