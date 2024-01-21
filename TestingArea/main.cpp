@@ -1,22 +1,49 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <algorithm>
+#include <cmath>
 using namespace std;
+
+void deleteStar(vector<vector<char>>& v, int x, int y, int len, int remain)
+{
+	if (remain == 0) return;
+
+	int hlen = len / 2;
+	for (int i = x - hlen; i <= x + hlen; i++)
+		for (int j = y - hlen; j <= y + hlen; j++)
+			v[i][j] = ' ';
+
+	deleteStar(v, x - len, y - len, len / 3, remain - 1);
+	deleteStar(v, x - len, y, len / 3, remain - 1);
+	deleteStar(v, x - len, y + len, len / 3, remain - 1);
+	deleteStar(v, x, y - len, len / 3, remain - 1);
+	deleteStar(v, x, y + len, len / 3, remain - 1);
+	deleteStar(v, x + len, y - len, len / 3, remain - 1);
+	deleteStar(v, x + len, y, len / 3, remain - 1);
+	deleteStar(v, x + len, y + len, len / 3, remain - 1);
+}
 
 int main()
 {
-	vector<pair<string, string>> v;
-	v.push_back({ "a", "aaa" });
-	v.push_back({ "b", "bbb" });
-	v.push_back({ "c", "ccc" });
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
-	string s = "ccc";
+	int a;
+	cin >> a;
 
-	int idx = find_if(v.begin(), v.end(),
-		[&s](const pair<string, string>& elem) {return elem.second == s;})
-		- v.begin();
+	vector<vector<char>> v(a, vector<char>(a, '*'));
+	int x = v.size() / 2;
+	int y = v.size() / 2;
+	int len = v.size() / 3;
+	int remain = (int)pow(a, 1.0 / 3);
+	deleteStar(v, x, y, len, remain);
 
-	cout << idx;
+	for (int i = 0; i < v.size(); i++)
+	{
+		for (int j = 0; j < v.size(); j++)
+			cout << v[i][j];
+		cout << '\n';
+	}
 
+	return 0;
 }
