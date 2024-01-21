@@ -133,6 +133,7 @@
     <ClCompile Include="4_mergeSort.cpp" />
     <ClCompile Include="5_cantoringAlong.cpp" />
     <ClCompile Include="6_printStar.cpp" />
+    <ClCompile Include="7_hanoiTower.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

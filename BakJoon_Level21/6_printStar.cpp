@@ -1,25 +1,17 @@
 #include <iostream>
-#include <vector>
-#include <cmath>
 using namespace std;
 
-void deleteStar(vector<vector<char>>& v, int x, int y, int len, int remain)
+void printStar(int i, int j, int a)
 {
-	if (remain == 0) return;
-
-	int hlen = len / 2;
-	for (int i = x - hlen; i <= x + hlen; i++)
-		for (int j = y - hlen; j <= y + hlen; j++)
-			v[i][j] = ' ';
-
-	deleteStar(v, x - len, y - len, len / 3, remain - 1);
-	deleteStar(v, x - len, y      , len / 3, remain - 1);
-	deleteStar(v, x - len, y + len, len / 3, remain - 1);
-	deleteStar(v, x      , y - len, len / 3, remain - 1);
-	deleteStar(v, x      , y + len, len / 3, remain - 1);
-	deleteStar(v, x + len, y - len, len / 3, remain - 1);
-	deleteStar(v, x + len, y      , len / 3, remain - 1);
-	deleteStar(v, x + len, y + len, len / 3, remain - 1);
+	if ((i / a) % 3 == 1 && (j / a) % 3 == 1)
+		cout << ' ';
+	else
+	{
+		if (a / 3 == 0)
+			cout << '*';
+		else
+			printStar(i, j, a / 3);
+	}
 }
 
 int main()
@@ -31,17 +23,10 @@ int main()
 	int a;
 	cin >> a;
 
-	vector<vector<char>> v(a, vector<char>(a, '*'));
-	int x = v.size() / 2;
-	int y = v.size() / 2;
-	int len = v.size();
-	int remain = (int)pow(a, 1.0 / 3);
-	deleteStar(v, x, y, len, remain);
-
-	for (int i = 0; i < v.size(); i++)
+	for (int i = 0; i < a; i++)
 	{
-		for (int j = 0; j < v.size(); j++)
-			cout << v[i][j];
+		for (int j = 0; j < a; j++)
+			printStar(i, j, a);
 		cout << '\n';
 	}
 
