@@ -1,18 +1,29 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-vector<vector<double>> cache(5, vector<double>(5, -1));
+vector<uint64_t> cache(102, -1);
+uint64_t fibo(int n)
+{
+	cache[1] = cache[2] = cache[3] = 1;
+	cache[4] = cache[5] = 2;
+	for (int i = 6; i <= n; i++)
+		cache[i] = cache[i - 1] + cache[i - 5];
+
+	return cache[n];
+}
 
 int main()
 {
-	for (int i = 0; i < 5; i++)
+	int trys;
+	cin >> trys;
+
+	for (int i = 0; i < trys; i++)
 	{
-		for (int j = 0; j < 5; j++)
-		{
-			cout << cache[i][j] << ' ';
-		}
-		cout << '\n';
+		int n;
+		cin >> n;
+		cout << fibo(n) << '\n';
 	}
+
+	return 0;
 }
