@@ -1,29 +1,20 @@
 #include <iostream>
-#include <vector>
+#include <memory.h>
+#include <algorithm>
 using namespace std;
-
-vector<uint64_t> cache(102, -1);
-uint64_t fibo(int n)
-{
-	cache[1] = cache[2] = cache[3] = 1;
-	cache[4] = cache[5] = 2;
-	for (int i = 6; i <= n; i++)
-		cache[i] = cache[i - 1] + cache[i - 5];
-
-	return cache[n];
-}
 
 int main()
 {
-	int trys;
-	cin >> trys;
+	int64_t cache[10][10];
+	//float cache[10][10];
 
-	for (int i = 0; i < trys; i++)
+	memset(cache, -1, sizeof(cache));
+	//fill_n(&cache[0][0], 10 * 10, -1);
+
+	for (int i = 0; i < 10; i++)
 	{
-		int n;
-		cin >> n;
-		cout << fibo(n) << '\n';
+		for (int j = 0; j < 10; j++)
+			cout << cache[i][j] << ' ';
+		cout << '\n';
 	}
-
-	return 0;
 }

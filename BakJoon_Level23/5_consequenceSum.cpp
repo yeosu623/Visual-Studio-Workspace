@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <climits>
 using namespace std;
 
@@ -12,11 +10,18 @@ int main()
 	int a;
 	cin >> a;
 
-	int b;
-	vector<int> v;
+	int input;
+	int maxSum = INT_MIN;
+	int currentSum = 0;
 	for (int i = 0; i < a; i++)
 	{
-		cin >> b;
-		v.push_back(b);
+		cin >> input;
+
+		currentSum += input;
+		if (currentSum > maxSum) maxSum = currentSum;
+		if (currentSum < 0) currentSum = 0;
 	}
+
+	cout << maxSum;
+	return 0;
 }
