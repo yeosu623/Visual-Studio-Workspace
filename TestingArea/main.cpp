@@ -1,20 +1,70 @@
 #include <iostream>
-#include <memory.h>
-#include <algorithm>
+#include <deque>
+#include <string>
 using namespace std;
 
 int main()
 {
-	int64_t cache[10][10];
-	//float cache[10][10];
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
-	memset(cache, -1, sizeof(cache));
-	//fill_n(&cache[0][0], 10 * 10, -1);
+	int a;
+	cin >> a;
 
-	for (int i = 0; i < 10; i++)
+	string s;
+	int b;
+	deque<int> deq;
+	for (int i = 0; i < a; i++)
 	{
-		for (int j = 0; j < 10; j++)
-			cout << cache[i][j] << ' ';
-		cout << '\n';
+		cin >> s;
+		if (s == "push_front")
+		{
+			cin >> b;
+			deq.push_front(b);
+		}
+		else if (s == "push_back")
+		{
+			cin >> b;
+			deq.push_back(b);
+		}
+		else if (s == "pop_front")
+		{
+			if (deq.empty()) cout << -1 << '\n';
+			else
+			{
+				cout << deq.front() << '\n';
+				deq.pop_front();
+			}
+		}
+		else if (s == "pop_back")
+		{
+			if (deq.empty()) cout << -1 << '\n';
+			else
+			{
+				cout << deq.back() << '\n';
+				deq.pop_back();
+			}
+		}
+		else if (s == "size")
+		{
+			cout << deq.size() << '\n';
+		}
+		else if (s == "empty")
+		{
+			cout << deq.empty() << '\n';
+		}
+		else if (s == "front")
+		{
+			if (deq.empty()) cout << -1 << '\n';
+			else cout << deq.front() << '\n';
+		}
+		else if (s == "back")
+		{
+			if (deq.empty()) cout << -1 << '\n';
+			else cout << deq.back() << '\n';
+		}
 	}
+
+	return 0;
 }
