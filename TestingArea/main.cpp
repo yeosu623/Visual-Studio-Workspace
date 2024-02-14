@@ -1,34 +1,7 @@
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <climits>
 using namespace std;
-
-// 2147483647
-#define CACHE_SIZE 1000000
-uint64_t cache[CACHE_SIZE];
-
-uint64_t recursion(uint64_t a, uint64_t b, uint64_t c)
-{
-	// cache
-	if (b < CACHE_SIZE)
-		if (cache[b] != -1) return cache[b];
-
-	// non-cache
-	if (b == 1) return cache[1] = a % c;
-	else if (b == 2) return cache[2] = ((a % c) * (a % c)) % c;
-	else
-	{
-		if (b < CACHE_SIZE)
-		{
-			if (b % 2 == 0) return cache[b] = (recursion(a, b / 2, c) * recursion(a, b / 2, c)) % c;
-			else if (b % 2 == 1) return cache[b] = (recursion(a, b / 2, c) * recursion(a, b / 2 + 1, c)) % c;
-		}
-		else
-		{
-			if (b % 2 == 0) return (recursion(a, b / 2, c) * recursion(a, b / 2, c)) % c;
-			else if (b % 2 == 1) return (recursion(a, b / 2, c) * recursion(a, b / 2 + 1, c)) % c;
-		}
-	}
-}
 
 int main()
 {
@@ -36,11 +9,64 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	uint64_t a, b, c;
-	cin >> a >> b >> c;
+	string s;
+	cin >> s;
 
-	memset(cache, -1, sizeof(cache));
-	cout << recursion(a, b, c);
+	string temp;
+	int answer = 0;
 
+	// 첫 숫자가 -일 경우, 모든 숫자를 빼면 답이 나온다.
+	if (s[0] == '-')
+	{
+		for (int i = 1; i < s.length(); i++)
+		{
+			if (s[i] == '+' || s[i] == '-')
+			{
+				answer -= stoi(temp);
+				temp = "";
+			}
+			else temp += s[i];
+		}
+
+		answer -= stoi(temp);
+		cout << answer;
+		return 0;
+	}
+
+	int minus_begin = INT_MAX;
+	// 첫 숫자가 +일 경우, 처음 -가 나올떄까지 더한 다음
+	// -가 나오는 순간부터는 모든 숫자를 뺸다.
+	for (int i = 0; i < s.length(); i++)
+	{
+		if (s[i] == '+')
+		{
+			answer += stoi(temp);
+			temp = "";
+		}
+		else if (s[i] == '-')
+		{
+			answer += stoi(temp);
+			temp = "";
+
+			minus_begin = i;
+			break;
+		}
+		else temp += s[i];
+	}
+
+	for (int i = minus_begin + 1; i < s.length(); i++)
+	{
+		if (s[i] == '+' || s[i] == '-')
+		{
+			answer -= stoi(temp);
+			temp = "";
+		}
+		else temp += s[i];
+	}
+
+	if (minus_begin == INT_MAX) answer += stoi(temp); // 전부 양수
+	else answer -= stoi(temp); // 뒤에 음수가 있음.
+
+	cout << answer;
 	return 0;
 }
