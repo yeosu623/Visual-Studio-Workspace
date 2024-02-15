@@ -1,7 +1,76 @@
 #include <iostream>
-#include <string>
-#include <climits>
+#include <cstring>
+#define MAX_FACTORIAL 100
 using namespace std;
+
+int n1;
+int n2;
+int n3;
+int primes[MAX_FACTORIAL+1];
+uint64_t answer;
+
+void countPrimes(int n, char code)
+{
+	for (int i = 2; i <= n; i++)
+	{
+		if (n % i == 0)
+		{
+			if (code == 'a') primes[i]++;
+			else if (code == 'm') primes[i]--;
+			n /= i;
+			i = 1;
+		}
+	}
+}
+
+void factorial(int n, char code)
+{
+	for (int i = 1; i <= n; i++)
+	{
+		if (code == 'a') // add primes
+			countPrimes(i, code);
+		else if (code == 'm') // minus primes
+			countPrimes(i, code);
+	}
+}
+
+void addAnswer()
+{
+	factorial(n1 + n2 + n3, 'a');
+	factorial(n1, 'm');
+	factorial(n2, 'm');
+	factorial(n3, 'm');
+
+	uint64_t partAnswer = 1;
+	for (int i = 0; i < MAX_FACTORIAL + 1; i++)
+	{
+		while (primes[i])
+		{
+			primes[i]--;
+			partAnswer *= i;
+		}
+	}
+	answer += partAnswer;
+}
+
+void recursion(int input)
+{
+	addAnswer();
+	//cout << n1 << ' ' << n2 << ' ' << n3 << ' ' << answer << '\n';
+	if (n1 > 1)
+	{
+		n2 += 1;
+		n1 -= 2;
+		recursion(input);
+	}
+	else if (n3 < input / 3)
+	{
+		n3 += 1;
+		n2 = 0;
+		n1 = input - n3 * 3;
+		recursion(input);
+	}
+}
 
 int main()
 {
@@ -9,64 +78,19 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	string s;
-	cin >> s;
-
-	string temp;
-	int answer = 0;
-
-	// 첫 숫자가 -일 경우, 모든 숫자를 빼면 답이 나온다.
-	if (s[0] == '-')
+	for (int i = 1; i <= 70; i++)
 	{
-		for (int i = 1; i < s.length(); i++)
-		{
-			if (s[i] == '+' || s[i] == '-')
-			{
-				answer -= stoi(temp);
-				temp = "";
-			}
-			else temp += s[i];
-		}
+		n1 = i;
+		n2 = 0;
+		n3 = 0;
+		answer = 0;
+		memset(primes, 0, sizeof(primes));
 
-		answer -= stoi(temp);
-		cout << answer;
-		return 0;
+		recursion(i);
+		if (i < 10) cout << i << "   = " << answer << '\n';
+		else if (i < 100) cout << i << "  = " << answer << '\n';
+		else if (i < 1000) cout << i << " = " << answer << '\n';
 	}
 
-	int minus_begin = INT_MAX;
-	// 첫 숫자가 +일 경우, 처음 -가 나올떄까지 더한 다음
-	// -가 나오는 순간부터는 모든 숫자를 뺸다.
-	for (int i = 0; i < s.length(); i++)
-	{
-		if (s[i] == '+')
-		{
-			answer += stoi(temp);
-			temp = "";
-		}
-		else if (s[i] == '-')
-		{
-			answer += stoi(temp);
-			temp = "";
-
-			minus_begin = i;
-			break;
-		}
-		else temp += s[i];
-	}
-
-	for (int i = minus_begin + 1; i < s.length(); i++)
-	{
-		if (s[i] == '+' || s[i] == '-')
-		{
-			answer -= stoi(temp);
-			temp = "";
-		}
-		else temp += s[i];
-	}
-
-	if (minus_begin == INT_MAX) answer += stoi(temp); // 전부 양수
-	else answer -= stoi(temp); // 뒤에 음수가 있음.
-
-	cout << answer;
 	return 0;
 }
