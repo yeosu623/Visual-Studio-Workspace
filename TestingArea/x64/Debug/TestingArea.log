@@ -1,2 +1,6 @@
 ﻿  main.cpp
+C:\Users\yeosu\source\repos\TestingArea\main.cpp(34,10): warning C4101: 'hr' :참조되지 않은 지역 변수입니다.
+C:\Users\yeosu\source\repos\TestingArea\main.cpp(33,6): warning C4101: 'l' :참조되지 않은 지역 변수입니다.
+C:\Users\yeosu\source\repos\TestingArea\main.cpp(34,6): warning C4101: 'hl' :참조되지 않은 지역 변수입니다.
+C:\Users\yeosu\source\repos\TestingArea\main.cpp(33,9): warning C4101: 'r' :참조되지 않은 지역 변수입니다.
   TestingArea.vcxproj -> C:\Users\yeosu\source\repos\TestingArea\x64\Debug\TestingArea.exe
