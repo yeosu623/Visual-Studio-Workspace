@@ -1,29 +1,16 @@
 #include <iostream>
+#include <queue>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
-uint64_t p = 1000000007;
-
-uint64_t factorial(uint64_t n)
+struct cmp
 {
-	uint64_t result = 1;
-	for (int i = 1; i <= n; i++)
+	bool operator()(int a, int b)
 	{
-		result *= i;
-		result %= p;
+		return a < b;
 	}
-
-	return result;
-}
-
-uint64_t power(uint64_t a, uint64_t e)
-{
-	if (e == 1) return a % p;
-
-	uint64_t temp = power(a, e / 2);
-	if (e % 2 == 1) return (temp * temp % p) * a % p;
-	else return temp * temp % p;
-}
+};
 
 int main()
 {
@@ -31,15 +18,18 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	uint64_t n, k;
-	cin >> n >> k;
+	priority_queue<int, vector<int>, cmp> pq;
+	pq.push(1);
+	pq.push(5);
+	pq.push(3);
+	pq.push(2);
+	pq.push(4);
 
-	// 분자
-	uint64_t upper = factorial(n);
-	// 분모
-	uint64_t lower = power(factorial(k) * factorial(n - k) % p, p - 2);
-
-	cout << upper * lower % p;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << pq.top() << ' ';
+		pq.pop();
+	}
 
 	return 0;
 }

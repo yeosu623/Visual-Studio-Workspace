@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\7_LIS2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:7_LIS2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\6_KthNumber.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:6_KthNumber.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\5_aggressiveCows.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:5_aggressiveCows.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\4_EKO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:4_EKO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\3_cutWires.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:3_cutWires.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\2_numberCard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:2_numberCard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\1_findNumber.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6F35EF0D-FB73-4D7C-8EC3-70F38AD8CAF8}|BakJoon_Level27.vcxproj|solutionrelative:1_findNumber.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "7_LIS2.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\7_LIS2.cpp",
+              "RelativeDocumentMoniker": "7_LIS2.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\7_LIS2.cpp",
+              "RelativeToolTip": "7_LIS2.cpp",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAuwB8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:43:46.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "6_KthNumber.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\6_KthNumber.cpp",
+              "RelativeDocumentMoniker": "6_KthNumber.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\6_KthNumber.cpp",
+              "RelativeToolTip": "6_KthNumber.cpp",
+              "ViewState": "AQIAABIAAAAAAAAAAAAuwCoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:43:16.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "5_aggressiveCows.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\5_aggressiveCows.cpp",
+              "RelativeDocumentMoniker": "5_aggressiveCows.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\5_aggressiveCows.cpp",
+              "RelativeToolTip": "5_aggressiveCows.cpp",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAuwDcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:43:01.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "4_EKO.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\4_EKO.cpp",
+              "RelativeDocumentMoniker": "4_EKO.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\4_EKO.cpp",
+              "RelativeToolTip": "4_EKO.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:42:39.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "3_cutWires.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\3_cutWires.cpp",
+              "RelativeDocumentMoniker": "3_cutWires.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\3_cutWires.cpp",
+              "RelativeToolTip": "3_cutWires.cpp",
+              "ViewState": "AQIAABYAAAAAAAAAAAAuwC4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:42:23.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "2_numberCard.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\2_numberCard.cpp",
+              "RelativeDocumentMoniker": "2_numberCard.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\2_numberCard.cpp",
+              "RelativeToolTip": "2_numberCard.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAuwCEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:42:09.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "1_findNumber.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\1_findNumber.cpp",
+              "RelativeDocumentMoniker": "1_findNumber.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level27\\1_findNumber.cpp",
+              "RelativeToolTip": "1_findNumber.cpp",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwBMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-25T06:41:50.023Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
