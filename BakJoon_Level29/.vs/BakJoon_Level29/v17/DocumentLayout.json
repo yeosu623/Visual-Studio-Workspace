@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\6_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:6_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\5_coins.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:5_coins.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\4_balance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:4_balance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\3_downhill.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:3_downhill.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\2_multiplyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:2_multiplyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\1_MergingFiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1286479D-C5E9-45FC-991C-49F0FDA593C5}|BakJoon_Level29.vcxproj|solutionrelative:1_MergingFiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "6_app.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\6_app.cpp",
+              "RelativeDocumentMoniker": "6_app.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\6_app.cpp",
+              "RelativeToolTip": "6_app.cpp",
+              "ViewState": "AQIAACcAAAAAAAAAAAAuwDQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:50:48.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "5_coins.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\5_coins.cpp",
+              "RelativeDocumentMoniker": "5_coins.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\5_coins.cpp",
+              "RelativeToolTip": "5_coins.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:50:35.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "4_balance.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\4_balance.cpp",
+              "RelativeDocumentMoniker": "4_balance.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\4_balance.cpp",
+              "RelativeToolTip": "4_balance.cpp",
+              "ViewState": "AQIAADwAAAAAAAAAAAAuwEkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:50:09.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "3_downhill.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\3_downhill.cpp",
+              "RelativeDocumentMoniker": "3_downhill.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\3_downhill.cpp",
+              "RelativeToolTip": "3_downhill.cpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAADEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:49:25.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "2_multiplyMatrix.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\2_multiplyMatrix.cpp",
+              "RelativeDocumentMoniker": "2_multiplyMatrix.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\2_multiplyMatrix.cpp",
+              "RelativeToolTip": "2_multiplyMatrix.cpp",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAADUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:48:53.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "1_MergingFiles.cpp",
+              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\1_MergingFiles.cpp",
+              "RelativeDocumentMoniker": "1_MergingFiles.cpp",
+              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\BakJoon_Level29\\1_MergingFiles.cpp",
+              "RelativeToolTip": "1_MergingFiles.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-27T13:48:33.65Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

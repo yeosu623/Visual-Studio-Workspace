@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC55FAD5-E22D-4F15-BE47-5B41FFC37BCC}|TestingArea.vcxproj|C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DC55FAD5-E22D-4F15-BE47-5B41FFC37BCC}|TestingArea.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +24,9 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-01-15T07:37:47.581Z",
+              "WhenOpened": "2024-02-27T06:33:58.855Z",
               "EditorCaption": ""
             }
           ]
