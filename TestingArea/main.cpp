@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-#include <vector>
 using namespace std;
 
 int main()
@@ -9,49 +8,49 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		int k;
-		cin >> k;
+	int n;
+	cin >> n;
 
-		char input1;
-		int input2;
-		int len = 0, del = 0;
-		priority_queue<int> pq1; // 최대값 제거
-		priority_queue<int, vector<int>, greater<int>> pq2; // 최소값 제거
-		for (int i = 0; i < k; i++)
+	char input;
+	char art[100][100];
+	for(int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
 		{
-			cin >> input1;
-			cin >> input2;
+			cin >> input;
+			art[i][j] = input;
+		}
 
-			if (input1 == 'I')
+	int dy[4] = {1, 0, 0, -1};
+	int dx[4] = { 0, 1, -1, 0 };
+	int art_human_region = 0, art_cow_region = 0;
+	char color;
+	queue<pair<short, short>> que;
+	for(int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+		{
+			color = art[i][j];
+			if (color != 'O')
 			{
-				pq1.push(input2);
-				pq2.push(input2);
-				len++;
+				que.push({ i, j });
+				art_human_region++;
 			}
-			else if (input1 == 'D')
+			while (!que.empty())
 			{
-				if (pq1.empty() || pq2.empty()) continue;
-				else if (input2 == 1) pq1.pop();
-				else if (input2 == -1) pq2.pop();
-				del++;
-					
-				if (del == len)
+				int y = que.front().first;
+				int x = que.front().second;
+				art[y][x] = 'O';
+				que.pop();
+
+				for (int i = 0; i < 4; i++)
 				{
-					while (!pq1.empty()) pq1.pop();
-					while (!pq2.empty()) pq2.pop();
-					len = 0;
-					del = 0;
+					int my = y + dy[i];
+					if (y < 0 || y >= n) continue;
+					int mx = x + dx[i];
+					if (x < 0 || x >= n) continue;
+
+					if (art[my][mx] == color)
+						que.push({ my, mx });
 				}
 			}
 		}
-
-		if (pq1.empty() || pq2.empty()) cout << "EMPTY" << '\n';
-		else cout << pq1.top() << ' ' << pq2.top() << '\n';
-	}
-
-	return 0;
 }
