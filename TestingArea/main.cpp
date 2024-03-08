@@ -3,29 +3,30 @@
 #include <algorithm>
 using namespace std;
 
-int main()
-{
-	cin.tie(NULL);
-	cout.tie(NULL);
-	ios::sync_with_stdio(false);
+int arr[1000001] = { 0, };
 
-	int a;
-	cin >> a;
+int main() {
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(false);
 
-	int b;
-	vector<int> v;
-	for (int i = 0; i < a; i++)
-	{
-		cin >> b;
-		v.push_back(b);
-	}
+    int N;
+    vector<int> v;
 
-	vector<int> w = v;
-	sort(w.begin(), w.end());
-	w.erase(unique(w.begin(), w.end()), w.end());
+    cin >> N;
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
 
-	for (const auto& n : v)
-		cout << lower_bound(w.begin(), w.end(), n) - w.begin() << ' ';
+    v.push_back(arr[0]);
 
-	return 0;
+    for (int i = 1; i < N; i++) {
+        if (v.back() < arr[i]) v.push_back(arr[i]);
+        else {
+            auto it = lower_bound(v.begin(), v.end(), arr[i]);
+            v[it - v.begin()] = arr[i];
+        }
+    }
+
+    cout << v.size();
+    return 0;
 }
