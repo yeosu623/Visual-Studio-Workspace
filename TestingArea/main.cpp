@@ -1,12 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
-bool cmp(vector<int>& v1, vector<int>& v2)
+int cache[10001][100];
+bool cmp(pair<int, int>& v1, pair<int, int>& v2)
 {
-	if (v1[1] == v2[1]) return v1[0] > v2[0];
-	return v1[1] < v2[1];
+	if (v1.first == v2.first) return v1.second < v2.second;
+	return v1.first < v2.first;
 }
 
 int main()
@@ -15,63 +17,48 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int n;
-	cin >> n;
+	int N, M;
+	cin >> N >> M;
 
 	int input;
-	vector<vector<int>> data(0, vector<int>(4)); // w, h, l ,r
-	vector<vector<int>> order(0, vector<int>(2)); // i, h
-	for (int i = 0; i < n; i++)
+	vector<pair<int, int>> v(N); // c and m
+	for (int i = 0; i < N; i++)
 	{
 		cin >> input;
-		data.push_back({ 1, input, i - 1, i + 1 });
-		order.push_back({ i, input });
+		v[i].second = input;
 	}
-	data[data.size() - 1][3] = -1;
-	sort(order.begin(), order.end(), cmp);
-
-	int l, r, i;
-	int hl, hr;
-	uint64_t w, h;
-	uint64_t area;
-	uint64_t answer = 0;
-	while (!order.empty())
+	for (int i = 0; i < N; i++)
 	{
-		i = order.back()[0];
-		h = order.back()[1];
-		order.pop_back();
-
-		w = data[i][0];
-		area = w * h;
-		if (area > answer) answer = area;
-		if (order.empty()) break;
-
-		if (data[i][2] == -1) // right
-		{
-			data[data[i][3]][0] += data[i][0];
-			data[data[i][3]][2] = data[i][2];
-		}
-		else if (data[i][3] == -1) // left
-		{
-			data[data[i][2]][0] += data[i][0];
-			data[data[i][2]][3] = data[i][3];
-		}
-		else
-		{
-			if (data[data[i][2]][1] >= data[data[i][3]][1]) // left
-			{
-				data[data[i][2]][0] += data[i][0];
-				data[data[i][2]][3] = data[i][3];
-			}
-			else // right
-			{
-				data[data[i][3]][0] += data[i][0];
-				data[data[i][3]][2] = data[i][2];
-			}
-		}
+		cin >> input;
+		v[i].first = input;
 	}
+	sort(v.begin(), v.end(), cmp);
 
-	cout << answer << '\n';
+	/* KnapSack Algorithm */
+	// y : total c
+	// x : (c, m)
+	int answer = INT_MAX;
+	for (int i = 0; i < 10001; i++) // x = 0
+	{
+		if (i < v[0].first) cache[i][0] = 0;
+		else cache[i][0] = v[0].second;
 
+		if (cache[i][0] >= M)
+			answer = min(answer, i);
+	}
+	for (int x = 1; x < v.size(); x++) // x = 1 ~
+		for (int y = 0; y < 10001; y++) // y = 0 ~ 10000
+		{
+			int& c = v[x].first;
+			int& m = v[x].second;
+
+			if (y < c) cache[y][x] = cache[y][x - 1];
+			else cache[y][x] = max(cache[y - c][x - 1] + m, cache[y][x - 1]);
+
+			if (cache[y][x] >= M)
+				answer = min(answer, y);
+		}
+
+	cout << answer;
 	return 0;
 }
