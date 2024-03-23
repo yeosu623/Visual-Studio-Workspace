@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <cstring>
 #include <algorithm>
 using namespace std;
 
@@ -9,23 +9,26 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int a;
-	cin >> a;
+	int n;
+	cin >> n;
 
-	int b;
-	vector<int> v;
-	for (int i = 0; i < a; i++)
+	int input;
+	int v[300];
+	for (int i = 0; i < n; i++)
 	{
-		cin >> b;
-		v.push_back(b);
+		cin >> input;
+		v[i] = input;
 	}
 
-	vector<int> w = v;
-	sort(w.begin(), w.end());
-	w.erase(unique(w.begin(), w.end()), w.end());
+	int cache[300];
+	cache[0] = v[0];
+	cache[1] = v[0] + v[1];
+	cache[2] = max(v[0] + v[2], v[1] + v[2]);
+	for (int i = 3; i < n; i++)
+		cache[i] = max(cache[i - 3] + v[i - 1] + v[i], cache[i - 2] + v[i]);
 
-	for (const auto& n : v)
-		cout << lower_bound(w.begin(), w.end(), n) - w.begin() << ' ';
+	if (n != 0) cout << cache[n - 1];
+	else cout << 0;
 
 	return 0;
 }
