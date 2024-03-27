@@ -1,31 +1,32 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int gcd(int a, int b)
-{
-	int c;
-	while (b)
-	{
-		c = a % b;
-		a = b;
-		b = c;
-	}
-	return a;
-}
+int arr[1000001] = { 0, };
 
-int main()
-{
-	cin.tie(NULL);
-	cout.tie(NULL);
-	ios::sync_with_stdio(false);
+int main() {
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(false);
 
-	int a, b;
-	cin >> a >> b;
+    int N;
+    vector<int> v;
 
-	int G = gcd(a, b);
-	int L = a * b / G;
+    cin >> N;
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
 
-	cout << G << ' ' << L;
+    v.push_back(arr[0]);
 
-	return 0;
+    for (int i = 1; i < N; i++) {
+        if (v.back() < arr[i]) v.push_back(arr[i]);
+        else {
+            auto it = lower_bound(v.begin(), v.end(), arr[i]);
+            v[it - v.begin()] = arr[i];
+        }
+    }
+
+    cout << v.size();
+    return 0;
 }
