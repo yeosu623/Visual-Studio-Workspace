@@ -1,32 +1,81 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
+#include <deque>
 using namespace std;
 
-int arr[1000001] = { 0, };
+int main()
+{
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
-int main() {
-    cin.tie(0);
-    cout.tie(0);
-    ios::sync_with_stdio(false);
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		string cmd;
+		int n;
+		string data;
+		deque<int> deq;
 
-    int N;
-    vector<int> v;
+		cin >> cmd;
+		cin >> n;
+		cin >> data;
+		string num = "";
+		for (int i = 1; i < data.length(); i++)
+		{
+			if (data[1] == ']') break;
+			if (data[i] == ',' || data[i] == ']')
+			{
+				deq.push_back(stoi(num));
+				num = "";
+			}
+			else num += data[i];
+		}
 
-    cin >> N;
-    for (int i = 0; i < N; i++)
-        cin >> arr[i];
+		bool error = false;
+		bool reversed = false;
+		for (int i = 0; i < cmd.length(); i++)
+		{
+			if (deq.empty())
+			{
+				if (cmd[i] == 'D')
+				{
+					cout << "error";
+					error = true;
+					break;
+				}
+			}
+			else if (cmd[i] == 'R')
+			{
+				reversed = !reversed;
+			}
+			else if (cmd[i] == 'D')
+			{
+				if (reversed) deq.pop_back();
+				else deq.pop_front();
+			}
+		}
 
-    v.push_back(arr[0]);
-
-    for (int i = 1; i < N; i++) {
-        if (v.back() < arr[i]) v.push_back(arr[i]);
-        else {
-            auto it = lower_bound(v.begin(), v.end(), arr[i]);
-            v[it - v.begin()] = arr[i];
-        }
-    }
-
-    cout << v.size();
-    return 0;
+		if (!error)
+		{
+			cout << '[';
+			while (!deq.empty())
+			{
+				if (reversed)
+				{
+					cout << deq.back();
+					deq.pop_back();
+				}
+				else
+				{
+					cout << deq.front();
+					deq.pop_front();
+				}
+				if (!deq.empty()) cout << ',';
+			}
+			cout << ']';
+		}
+		cout << '\n';
+	}
 }
