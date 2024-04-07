@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.cpp(17,3): error C2046: 대/소문자가 잘못되었습니다.
+C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.cpp(19,2): error C2059: 구문 오류: '}'
+  print_text.cpp
+  코드를 생성하고 있습니다...
