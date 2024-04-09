@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <queue>
+#include <cstring>
 using namespace std;
 
 int main()
@@ -9,23 +9,49 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int a;
-	cin >> a;
+	int n, k;
+	cin >> n >> k;
 
-	int b;
-	vector<int> v;
-	for (int i = 0; i < a; i++)
+	queue<pair<int, int>> que;
+	que.push({ n, 0 });
+
+	int visited[200001];
+	memset(visited, 0, sizeof(visited));
+	visited[n] = 1;
+
+	while (1)
 	{
-		cin >> b;
-		v.push_back(b);
+		pair<int, int> temp = que.front();
+		que.pop();
+
+		int place = temp.first;
+		int time = temp.second;
+
+		if (place == k)
+		{
+			cout << time;
+			break;
+		}
+
+		if (!visited[place - 1])
+			if (place - 1 >= 0)
+			{
+				visited[place - 1] = 1;
+				que.push({ place - 1, time + 1 });
+			}
+		if (!visited[place + 1])
+			if (place + 1 <= 100000)
+			{
+				visited[place + 1] = 1;
+				que.push({ place + 1, time + 1 });
+			}
+		if (!visited[place * 2])
+			if (place * 2 <= 100000)
+			{
+				visited[place * 2] = 1;
+				que.push({ place * 2, time + 1 });
+			}
 	}
-
-	vector<int> w = v;
-	sort(w.begin(), w.end());
-	w.erase(unique(w.begin(), w.end()), w.end());
-
-	for (const auto& n : v)
-		cout << lower_bound(w.begin(), w.end(), n) - w.begin() << ' ';
 
 	return 0;
 }
