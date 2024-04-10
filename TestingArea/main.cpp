@@ -1,7 +1,11 @@
 #include <iostream>
-#include <queue>
+#include <string>
 #include <cstring>
 using namespace std;
+
+int cache[100001][101];
+int weight[101];
+int value[101];
 
 int main()
 {
@@ -12,46 +16,26 @@ int main()
 	int n, k;
 	cin >> n >> k;
 
-	queue<pair<int, int>> que;
-	que.push({ n, 0 });
-
-	int visited[200001];
-	memset(visited, 0, sizeof(visited));
-	visited[n] = 1;
-
-	while (1)
+	int input1;
+	int input2;
+	for (int i = 1; i <= n; i++)
 	{
-		pair<int, int> temp = que.front();
-		que.pop();
+		cin >> input1 >> input2;
+		weight[i] = input1;
+		value[i] = input2;
+	}
 
-		int place = temp.first;
-		int time = temp.second;
-
-		if (place == k)
+	memset(cache, 0, sizeof(cache));
+	for (int i = 1; i <= n; i++)
+		for (int j = 1; j <= k; j++)
 		{
-			cout << time;
-			break;
+			if (weight[i] > j)
+				cache[j][i] = cache[j][i - 1];
+			else
+				cache[j][i] = max(cache[j][i - 1], value[i] + cache[j - weight[i]][i - 1]);
 		}
 
-		if (!visited[place - 1])
-			if (place - 1 >= 0)
-			{
-				visited[place - 1] = 1;
-				que.push({ place - 1, time + 1 });
-			}
-		if (!visited[place + 1])
-			if (place + 1 <= 100000)
-			{
-				visited[place + 1] = 1;
-				que.push({ place + 1, time + 1 });
-			}
-		if (!visited[place * 2])
-			if (place * 2 <= 100000)
-			{
-				visited[place * 2] = 1;
-				que.push({ place * 2, time + 1 });
-			}
-	}
+	cout << cache[k][n];
 
 	return 0;
 }
