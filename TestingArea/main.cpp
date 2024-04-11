@@ -1,41 +1,45 @@
 #include <iostream>
-#include <string>
-#include <cstring>
+#include <vector>
+
 using namespace std;
 
-int cache[100001][101];
-int weight[101];
-int value[101];
+#define ll long long
 
-int main()
-{
+typedef vector<vector<ll>> matrix;
+
+const ll mod = 1000000007;
+ll N;
+matrix A = { {1, 1}, {1, 0} };
+matrix ans = { {1, 0}, {0, 1} };
+
+matrix operator * (matrix& a, matrix& b) {
+	matrix c = { {0, 0}, {0, 0} };
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			for (int k = 0; k < 2; k++)
+				c[i][j] += a[i][k] * b[k][j];
+			c[i][j] = c[i][j] % mod;
+		}
+	}
+	return c;
+}
+
+int main() {
+	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	ios::sync_with_stdio(false);
 
-	int n, k;
-	cin >> n >> k;
+	cin >> N;
 
-	int input1;
-	int input2;
-	for (int i = 1; i <= n; i++)
-	{
-		cin >> input1 >> input2;
-		weight[i] = input1;
-		value[i] = input2;
+	while (N > 0) {
+		if ((N & 1) == 1) {
+			ans = ans * A;
+		}
+		A = A * A;
+		N = N >> 1;
 	}
 
-	memset(cache, 0, sizeof(cache));
-	for (int i = 1; i <= n; i++)
-		for (int j = 1; j <= k; j++)
-		{
-			if (weight[i] > j)
-				cache[j][i] = cache[j][i - 1];
-			else
-				cache[j][i] = max(cache[j][i - 1], value[i] + cache[j - weight[i]][i - 1]);
-		}
-
-	cout << cache[k][n];
+	cout << ans[0][1] << '\n';
 
 	return 0;
 }
