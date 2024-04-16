@@ -1,44 +1,48 @@
 #include <iostream>
-#include <cmath>
+#include <stack>
 #include <vector>
+#include <cstring>
 using namespace std;
 
-bool isPrime(int n)
-{
-	if (n <= 1) return false;
-	for (int i = 2; i <= sqrt(n); i++)
-		if (n % i == 0) return false;
-
-	return true;
-}
-
+int counting[1000001];
 int main()
 {
 	cin.tie(NULL);
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
+	int n;
+	cin >> n;
+
+	int input;
 	vector<int> v;
-	int a;
-	for (int i = 0; i <= 123456 * 2; i++)
+	memset(counting, 0, sizeof(counting));
+	for (int i = 0; i < n; i++)
 	{
-		v.push_back(isPrime(i));
+		cin >> input;
+		counting[input]++;
+		v.push_back(input);
 	}
 
-	int b;
-	while (true)
+	vector<int> answer(n, -1);
+	stack<pair<int, int>> st; // idx, value
+	for (int i = 0; i < v.size(); i++)
 	{
-		cin >> b;
-		if (b == 0) break;
-
-		int count = 0;
-		for (int i = b + 1; i <= 2 * b; i++)
+		while (!st.empty())
 		{
-			if (v[i]) count++;
+			int& idx = st.top().first;
+			int& value = st.top().second;
+			if (counting[value] < counting[v[i]])
+			{
+				answer[idx] = v[i];
+				st.pop();
+			}
+			else break;
 		}
-
-		cout << count << '\n';
+		st.push({ i, v[i] });
 	}
 
+	for (int i = 0; i < n; i++)
+		cout << answer[i] << ' ';
 	return 0;
 }
