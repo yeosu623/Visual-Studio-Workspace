@@ -1,48 +1,32 @@
 #include <iostream>
-#include <stack>
 #include <vector>
-#include <cstring>
 using namespace std;
 
-int counting[1000001];
+vector<vector<vector<int>>> cache(21, vector<vector<int>>(21, vector<int>(21, -1)));
+int w(int a, int b, int c)
+{
+	if (a <= 0 || b <= 0 || c <= 0) return 1;
+	if (a > 20 || b > 20 || c > 20) return w(20, 20, 20);
+
+	if (cache[a][b][c] != -1) return cache[a][b][c];
+
+	if (a < b && b < c)
+		return cache[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c);
+
+	return cache[a][b][c] = w(a - 1, b, c) + w(a - 1, b - 1, c) + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1);
+}
+
 int main()
 {
-	cin.tie(NULL);
-	cout.tie(NULL);
-	ios::sync_with_stdio(false);
+	int a, b, c;
 
-	int n;
-	cin >> n;
-
-	int input;
-	vector<int> v;
-	memset(counting, 0, sizeof(counting));
-	for (int i = 0; i < n; i++)
+	while (1)
 	{
-		cin >> input;
-		counting[input]++;
-		v.push_back(input);
+		cin >> a >> b >> c;
+		if (a == -1 && b == -1 && c == -1) break;
+
+		cout << "w(" << a << ", " << b << ", " << c << ") = " << w(a, b, c) << '\n';
 	}
 
-	vector<int> answer(n, -1);
-	stack<pair<int, int>> st; // idx, value
-	for (int i = 0; i < v.size(); i++)
-	{
-		while (!st.empty())
-		{
-			int& idx = st.top().first;
-			int& value = st.top().second;
-			if (counting[value] < counting[v[i]])
-			{
-				answer[idx] = v[i];
-				st.pop();
-			}
-			else break;
-		}
-		st.push({ i, v[i] });
-	}
-
-	for (int i = 0; i < n; i++)
-		cout << answer[i] << ' ';
 	return 0;
 }
