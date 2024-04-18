@@ -1,32 +1,43 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>
 using namespace std;
 
-vector<vector<vector<int>>> cache(21, vector<vector<int>>(21, vector<int>(21, -1)));
-int w(int a, int b, int c)
+bool condition(uint64_t m, uint64_t n, uint64_t k)
 {
-	if (a <= 0 || b <= 0 || c <= 0) return 1;
-	if (a > 20 || b > 20 || c > 20) return w(20, 20, 20);
+	uint64_t sum = 0;
+	uint64_t temp;
+	int max_range = m < n ? m : n;
+	for (int i = 1; i <= max_range; i++)
+	{
+		temp = m / i;
+		if (temp > n) temp = n;
 
-	if (cache[a][b][c] != -1) return cache[a][b][c];
+		sum += temp;
+	}
 
-	if (a < b && b < c)
-		return cache[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c);
-
-	return cache[a][b][c] = w(a - 1, b, c) + w(a - 1, b - 1, c) + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1);
+	if (k <= sum) return true;
+	else return false;
 }
 
 int main()
 {
-	int a, b, c;
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
-	while (1)
+	uint64_t n, k;
+	cin >> n >> k;
+
+	uint64_t l = 1;
+	uint64_t r = n * n;
+	uint64_t m;
+	while (l < r) // parametric search - find min
 	{
-		cin >> a >> b >> c;
-		if (a == -1 && b == -1 && c == -1) break;
-
-		cout << "w(" << a << ", " << b << ", " << c << ") = " << w(a, b, c) << '\n';
+		m = (l + r) / 2;
+		if (condition(m, n, k)) r = m;
+		else l = m + 1;
 	}
 
+	cout << l;
 	return 0;
 }
