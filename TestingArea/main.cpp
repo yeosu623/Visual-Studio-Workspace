@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <queue>
 using namespace std;
 
 int main()
@@ -12,20 +11,22 @@ int main()
 	int a;
 	cin >> a;
 
-	int b;
-	vector<int> v;
-	for (int i = 0; i < a; i++)
+	queue<int> que;
+	for (int i = 1; i <= a; i++)
 	{
-		cin >> b;
-		v.push_back(b);
+		que.push(i);
 	}
 
-	vector<int> w = v;
-	sort(w.begin(), w.end());
-	w.erase(unique(w.begin(), w.end()), w.end());
+	int b;
+	while (que.size() != 1)
+	{
+		que.pop();
+		b = que.front();
+		que.pop();
+		que.push(b);
+	}
 
-	for (const auto& n : v)
-		cout << lower_bound(w.begin(), w.end(), n) - w.begin() << ' ';
+	cout << que.front();
 
 	return 0;
 }
