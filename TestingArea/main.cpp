@@ -1,11 +1,53 @@
 #include <iostream>
-#include <queue>
-#include <vector>
 using namespace std;
 
-bool cmp(int a, int b)
+int paper[2187][2187];
+int aa = 0; // -1 총 개수
+int bb = 0; // 0 총 개수
+int cc = 0; // 1 총 개수
+void recursion(int x1, int y1, int x2, int y2, int len)
 {
-	return a > b;
+	int a = 0; // -1 개수
+	int b = 0; // 0 개수
+	int c = 0; // 1 개수
+	int allSame = len * len;
+
+	for (int i = y1; i < y2; i++)
+		for (int j = x1; j < x2; j++)
+		{
+			int get = paper[i][j];
+			if (get == -1) a++;
+			else if (get == 0) b++;
+			else if (get == 1) c++;
+		}
+
+	if (a == allSame) aa++;
+	else if (b == allSame) bb++;
+	else if (c == allSame) cc++;
+	else
+	{
+		len = len / 3;
+		int x10 = x1;
+		int x11 = x1 + len;
+		int x12 = x1 + len + len;
+		int x13 = x2;
+		int y10 = y1;
+		int y11 = y1 + len;
+		int y12 = y1 + len + len;
+		int y13 = y2;
+
+		recursion(x10, y10, x11, y11, len);
+		recursion(x10, y11, x11, y12, len);
+		recursion(x10, y12, x11, y13, len);
+
+		recursion(x11, y10, x12, y11, len);
+		recursion(x11, y11, x12, y12, len);
+		recursion(x11, y12, x12, y13, len);
+
+		recursion(x12, y10, x13, y11, len);
+		recursion(x12, y11, x13, y12, len);
+		recursion(x12, y12, x13, y13, len);
+	}
 }
 
 int main()
@@ -14,58 +56,19 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int a;
-	cin >> a;
+	int n;
+	cin >> n;
 
-	int n, m;
-	int answer;
-	int priority;
 	int input;
-	pair<int, char> temp;
-	queue<pair<int, char>> que;
-	vector<int> priority_count(10, 0); // idx 0은 미사용
-
-	while (a--)
-	{
-		cin >> n >> m;
-		for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
 		{
 			cin >> input;
-			if (i == m) que.push({ input, 'O' }); // 나
-			else que.push({ input, 'X' }); // 다른 사람
-
-			priority_count[input]++;
+			paper[i][j] = input;
 		}
 
-		answer = 0;
-		priority = 9; // 9부터 시작해서 순차적으로 하강
-
-		while (1)
-		{
-			while (priority_count[priority] == 0)
-				priority--;
-
-			temp = que.front();
-			que.pop();
-
-			if (temp.first == priority)
-			{
-				answer++;
-				priority_count[priority]--;
-
-				if (temp.second == 'O') break;
-			}
-			else
-			{
-				que.push(temp);
-			}
-		}
-
-		cout << answer << '\n';
-		while (!que.empty()) que.pop();
-		priority_count.clear();
-		priority_count.resize(10, 0);
-	}
+	recursion(0, 0, n, n, n);
+	cout << aa << '\n' << bb << '\n' << cc;
 
 	return 0;
 }
