@@ -1,49 +1,59 @@
 #include <iostream>
-#include <cstring>
-#include <climits>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
-int m, n;
-int map[500][500][2]; // height, dp
-int dx[4] = { 0, 1, -1, 0 };
-int dy[4] = { 1, 0, 0, -1 };
-int dfs(int y, int x)
-{
-	if (map[y][x][1] != -1) return map[y][x][1];
-
-	map[y][x][1] = 0;
-	for (int i = 0; i < 4; i++)
-	{
-		int mx = x + dx[i];
-		if (mx < 0 || mx >= n) continue;
-		int my = y + dy[i];
-		if (my < 0 || my >= m) continue;
-
-		if (map[y][x][0] > map[my][mx][0])
-			map[y][x][1] += dfs(my, mx);
-	}
-	return map[y][x][1];
+bool cmp(vector<int>& v1, vector<int>& v2) {
+	return v1[1] < v2[1];
 }
 
-int main()
-{
+int minIdx(vector<vector<int>>& v, int start, int end) {
+	int idx = -1;
+	int minWeight = 999999;
+	for (int i = start; i < end; i++) {
+		if (minWeight > v[i][3]) {
+			minWeight = v[i][3];
+			idx = i;
+		}
+	}
+
+	return idx;
+}
+
+int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	cin >> m >> n;
+	int n;
+	cin >> n;
 
-	int input;
-	memset(map, -1, sizeof(map));
-	map[m - 1][n - 1][1] = 1; // 끝점 표시
-	for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++)
-		{
-			cin >> input;
-			map[i][j][0] = input;
+	int input_a;
+	int input_h;
+	int input_w;
+	vector<vector<int>> v;
+	for (int i = 0; i < n; i++) {
+		cin >> input_a >> input_h >> input_w;
+		
+		vector<int> temp;
+		temp.push_back(i + 1);
+		temp.push_back(input_a);
+		temp.push_back(input_h);
+		temp.push_back(input_w);
+
+		v.push_back(temp);
+	}
+
+	int answer = -1;
+	sort(v.begin(), v.end(), cmp);
+	for (int i = 0; i < n; i++) {
+		int idx = minIdx(v, 0, i);
+		int weight;
+		int height;
+		int sum = 0;
+		
+		while (idx != -1) {
+
 		}
-
-	cout << dfs(0, 0);
-	return 0;
+	}
 }
