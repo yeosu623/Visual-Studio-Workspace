@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <stack>
 using namespace std;
 
 int main()
@@ -8,20 +8,28 @@ int main()
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int n, k;
-	cin >> n >> k;
+	int a;
+	cin >> a;
 
-	int coin;
-	int cache[10001];
-	memset(cache, 0, sizeof(cache));
-	cache[0] = 1;
-	while (n--)
+	int b;
+	int c = 1;
+	stack<int> st;
+	for (int i = 0; i < a; i++)
 	{
-		cin >> coin;
-		for (int i = coin; i <= k; i++)
-			cache[i] += cache[i - coin];
+		cin >> b;
+		st.push(b);
+
+		while (st.top() == c)
+		{
+			st.pop();
+			c++;
+
+			if (st.empty()) break;
+		}
 	}
 
-	cout << cache[k];
+	if (a == c - 1) cout << "Nice";
+	else cout << "Sad";
+
 	return 0;
 }
