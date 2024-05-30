@@ -18,6 +18,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FCFS.cpp" />
+    <ClCompile Include="FCFS_experiment.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RoundRobin.cpp" />
+    <ClCompile Include="RoundRobin_experiment.cpp" />
+    <ClCompile Include="SJF_NonPreemptive.cpp" />
+    <ClCompile Include="SJF_NonPreemptive_experiment.cpp" />
+    <ClCompile Include="SJF_Preemptive.cpp" />
+    <ClCompile Include="SJF_Preemptive_experiment.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FCFS.h" />
+    <ClInclude Include="FCFS_experiment.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="RoundRobin.h" />
+    <ClInclude Include="RoundRobin_experiment.h" />
+    <ClInclude Include="SJF_NonPreemptive.h" />
+    <ClInclude Include="SJF_NonPreemptive_experiment.h" />
+    <ClInclude Include="SJF_Preemptive.h" />
+    <ClInclude Include="SJF_Preemptive_experiment.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,13 +148,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="scheduler_algorithm.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="scheduler_algorithm.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,5 +1,5 @@
-﻿  main.cpp
-C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.cpp(17,3): error C2046: 대/소문자가 잘못되었습니다.
-C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.cpp(19,2): error C2059: 구문 오류: '}'
-  print_text.cpp
-  코드를 생성하고 있습니다...
+﻿  RoundRobin_experiment.cpp
+C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.h(8,14): warning C4091: 'extern ': 변수를 선언하지 않으면 '_Status' 왼쪽은 무시됩니다.
+  (소스 파일 'RoundRobin_experiment.cpp'을(를) 컴파일하는 중)
+  
+  OS_TermProject_Scheduling.vcxproj -> C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\x64\Debug\OS_TermProject_Scheduling.exe
