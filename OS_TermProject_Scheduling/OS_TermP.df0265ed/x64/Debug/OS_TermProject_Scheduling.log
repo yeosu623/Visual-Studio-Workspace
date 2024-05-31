@@ -1,5 +1,10 @@
-﻿  RoundRobin_experiment.cpp
+﻿  SJF_Preemptive_experiment.cpp
 C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.h(8,14): warning C4091: 'extern ': 변수를 선언하지 않으면 '_Status' 왼쪽은 무시됩니다.
-  (소스 파일 'RoundRobin_experiment.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'SJF_Preemptive_experiment.cpp'을(를) 컴파일하는 중)
   
+  main.cpp
+C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\main.h(8,14): warning C4091: 'extern ': 변수를 선언하지 않으면 '_Status' 왼쪽은 무시됩니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
   OS_TermProject_Scheduling.vcxproj -> C:\Users\yeosu\source\repos\OS_TermProject_Scheduling\x64\Debug\OS_TermProject_Scheduling.exe

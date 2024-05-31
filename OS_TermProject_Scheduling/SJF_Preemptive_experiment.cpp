@@ -36,7 +36,7 @@ SJF_Preemptive_experiment::SJF_Preemptive_experiment() {
 	}
 
 	cout << "##Result##" << '\n';
-	printf("\tn\telapsed\tCPU\tthrough\tavgwait\tavgturn\tavgresp\n");
+	printf("\tn\telapsed\tCPU\tthrough\tavgwait\tavgturn\tavgresp\tpreemptive count\n");
 	while (test_number != tries) {
 		n = n_arr[test_number];
 		printf("TEST%d\t", test_number + 1);
@@ -143,6 +143,7 @@ void SJF_Preemptive_experiment::process() {
 	idx_run = EMPTY;
 	elapsed_time = 0;
 	working_time = 0;
+	preemptive_count = 0;
 	sort_process();
 
 	while (1) {
@@ -164,9 +165,13 @@ void SJF_Preemptive_experiment::process() {
 			}
 
 		if (idx_run != EMPTY) {
+			before_process_number = process_number[idx_run];
 			status[idx_run] = WAIT;
 			sort_run();
 			status[idx_run] = RUN;
+			after_process_number = process_number[idx_run];
+
+			if (before_process_number != after_process_number) preemptive_count++;
 		}
 
 		if (idx_run != n)
@@ -209,14 +214,15 @@ void SJF_Preemptive_experiment::process() {
 }
 
 void SJF_Preemptive_experiment::result() {
-	printf("%d\t%d\t%.1f\t%.4f\t%.1f\t%.1f\t%.1f\n",
+	printf("%d\t%d\t%.1f\t%.4f\t%.1f\t%.1f\t%.1f\t%d\n",
 		n,
 		elapsed_time,
 		cpu_utilization,
 		throughput,
 		average_waiting_time,
 		average_turnaround_time,
-		average_response_time);
+		average_response_time,
+		preemptive_count);
 
 	delete[] process_number;
 	delete[] status;

@@ -23,6 +23,9 @@ private:
 	int* waiting_time;
 	int* response_time;
 
+	int preemptive_count = 0;
+	int before_process_number;
+	int after_process_number;
 	int idx_none = 0;
 	int idx_wait = 0;
 	int idx_run = EMPTY;

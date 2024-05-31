@@ -122,9 +122,13 @@ void SJF_Preemptive::process() {
 		}
 
 		if (idx_run != EMPTY) {
+			before_process_number = process_number[idx_run];
 			status[idx_run] = WAIT;
 			sort_run();
 			status[idx_run] = RUN;
+			after_process_number = process_number[idx_run];
+
+			if (before_process_number != after_process_number) preemptive_count++;
 		}
 
 		if (idx_run != n)
@@ -181,7 +185,8 @@ void SJF_Preemptive::result() {
 	printf("throughput : %.4f Jobs/sec\n", throughput);
 	printf("average waiting time : %.1fs\n", average_waiting_time);
 	printf("average response time : %.1fs\n", average_response_time);
-	printf("average turnaround time : %.1fs\n\n", average_turnaround_time);
+	printf("average turnaround time : %.1fs\n", average_turnaround_time);
+	cout << "preemptive count : " << preemptive_count << '\n' << '\n';
 
 	cout << "process         : ";
 	for (int i = 0; i < n; i++) printf("P%-3d", process_number[i]);
