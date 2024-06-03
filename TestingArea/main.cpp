@@ -1,13 +1,39 @@
 #include <iostream>
-#include <random>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-    random_device dev;
-    mt19937 seed(dev());
-    uniform_int_distribution<mt19937::result_type> randon_int(0, 2);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
-    for (int i = 0; i < 10; i++)
-        cout << randon_int(seed) << '\n';
+	int cache[1000][3];
+
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+
+		cache[i][0] = a;
+		cache[i][1] = b;
+		cache[i][2] = c;
+	}
+
+	for (int i = 1; i < n; i++)
+	{
+		cache[i][0] += min(cache[i - 1][1], cache[i - 1][2]);
+		cache[i][1] += min(cache[i - 1][0], cache[i - 1][2]);
+		cache[i][2] += min(cache[i - 1][0], cache[i - 1][1]);
+	}
+
+	int answer;
+	answer = min(cache[n - 1][0], cache[n - 1][1]);
+	answer = min(answer, cache[n - 1][2]);
+
+	cout << answer;
+
+	return 0;
 }
