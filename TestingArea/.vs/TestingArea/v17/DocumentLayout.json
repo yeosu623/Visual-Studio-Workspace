@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|C:\\Users\\yeosu\\source\\repos\\TestingArea\\main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|solutionrelative:main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A4C421DC-3F0C-4C9C-A238-857F4CEB194C}|TestingArea.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -23,25 +19,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main2.cpp",
-              "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\main2.cpp",
-              "RelativeDocumentMoniker": "main2.cpp",
-              "ToolTip": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\main2.cpp",
-              "RelativeToolTip": "main2.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-05T05:26:48.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\yeosu\\source\\repos\\TestingArea\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAE0AAABKAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwBsAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-27T06:33:58.855Z",
               "EditorCaption": ""
