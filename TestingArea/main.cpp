@@ -6,6 +6,7 @@
 #include <cmath>
 #include <deque>
 #include <list>
+#include <stack>
 using namespace std;
 
 int main() {
@@ -13,26 +14,60 @@ int main() {
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int n, k;
-	cin >> n >> k;
+	string s;
+	cin >> s;
 
-	list<int> li;
-	for (int i = 0; i < n; i++) li.push_back(i + 1);
+	// (, ), [, ] 의 아스키 코드 숫자 구분을 위해, 숫자는 음수로 표기
+	int value;
+	bool correct = true;
+	stack<int> st;
+	for (int i = 0; i < s.size(); i++) {
+		value = -1;
+		st.push(s[i]);
 
-	auto cursor = li.begin();
-
-	cout << "<";
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < k - 1; j++) {
-			if (cursor == li.end()) cursor = li.begin();
-			cursor++;
-			if (cursor == li.end()) cursor = li.begin();
+		switch (st.top()) {
+		case ')':
+			st.pop();
+			if (!st.empty() && st.top() < 0) {	value = st.top(); st.pop();	}
+			if (!st.empty() && st.top() == '(') { st.pop(); st.push(value * 2); }
+			else correct = false;
+			break;
+		case ']':
+			st.pop();
+			if (!st.empty() && st.top() < 0) { value = st.top(); st.pop(); }
+			if (!st.empty() && st.top() == '[') { st.pop(); st.push(value * 3); }
+			else correct = false;
+			break;
 		}
-		
-		if (i != n - 1) cout << *cursor << ", ";
-		else cout << *cursor;
 
-		cursor = li.erase(cursor);
+		if (!st.empty() && st.top() < 0) {
+			value = st.top(); st.pop();
+			if (!st.empty() && st.top() < 0) { value += st.top(); st.pop(); st.push(value); }
+			else st.push(value);
+		}
+
+		if (!correct) break;
+		//cout << "stack : ";
+
+		//stack<int> st2(st);
+		//stack<int> st3;
+		//while (!st2.empty()) {
+		//	st3.push(st2.top());
+		//	st2.pop();
+		//}
+		//while (!st3.empty()) {
+		//	cout << st3.top() << ' ';
+		//	st3.pop();
+		//}
+		//cout << '\n';
 	}
-	cout << ">";
+
+	int answer = 0;
+	while (!st.empty()) {
+		answer -= st.top();
+		st.pop();
+	}
+
+	if (correct) cout << answer;
+	else cout << 0;
 } 
